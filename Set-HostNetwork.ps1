@@ -1,45 +1,61 @@
-```PowerShell
 $ErrorActionPreference = 'Stop'
+
 #region Variables for the scenario
-## Optional bandwidth shaping parameters. Change the values to suit your
+
+## Optional bandwidth shaping parameters. Change the values to suit your environment
+
 $defaultFlowMinimumBandwidthWeight = 50
 $backupBandwidthWeight = 40
 $managementBandwidthWeight = 10
+
 ## Backup Adapter (Optional)
 #$backupAdapterName = 'Backup'
+
 # VLAN ID for backup traffic; if no VLAN is preferred set this to 0
 #$backupVlanId = 100
+
 # Set this to a string 'DHCP' for a dynamic IP address
 #$backupIPAddress = '172.16.105.51'
+
 # Backup network address prefix (24 translates to subnet mask 255.255.255.0)
 #$backupAddressPrefix = 24
+
 ## Management Adapter
 $ManagementSwitchName = 'Management'
 $ManagementNetAdapterName = @('Integrated NIC 1 Port 1-1','Integrated NIC 1 Port 2-1')
 $ManagementAdapterName = 'Management'
+
 # VLAN ID for host management traffic; if no VLAN is preferred set this to 0
 $ManagementVlanId = 0
+
 # Management Gateway address
 $ManagementGateway = '10.189.192.1'
+
 # DNS Server Address
 $ManagementDns = '10.189.217.2'
+
 # Set this to a string 'DHCP' for a dynamic IP address
 $ManagementIPAddress = '10.189.192.62'
+
 # Management address prefix (24 translates to subnet mask 255.255.255.0)
 $ManagementAddressPrefix = 24
+
 ## Storage Adapters
 ### You must specify 2 or 4 network adapter port names
 $StorageNetAdapterName = @('SLOT 3 PORT 1', 'SLOT 3 PORT 2')
+
 ### You must specify 1 or 2 or 4 VLANIDs
 ### Specify 0 if you want the network not tagged with any VLAN
 $StorageVlanId = @(101, 102)
+
 ### You must specify 2 or 4 IP Addresses
 ### DHCP as a value is accepted if you want dynamically assigned IP addresses
 $StorageIPAddress = @('192.168.101.11', '192.168.102.11')
-### You can specify 1 or 2 or 4 prefix length values (24 translates to subnet mask
-255.255.255.0)
+### You can specify 1 or 2 or 4 prefix length values (24 translates to subnet mask 255.255.255.0)
 $StorageAddressPrefix = @(24)
+
 #endregion
+
 ## Create a VM switch for management
 $null = New-VMSwitch -Name $ManagementSwitchName -AllowManagementOS 0 -NetAdapterName
 $ManagementNetAdapterName -MinimumBandwidthMode Weight -Verbose
@@ -119,4 +135,3 @@ for ($i = 0; $i -lt $StorageNetAdapterName.Count; $i++)
 $StorageIPAddress[$i] -PrefixLength $StoragePrefix -Verbose
  }
 }
-```
