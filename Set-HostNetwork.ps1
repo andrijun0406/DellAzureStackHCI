@@ -1,3 +1,4 @@
+```PowerShell
 $ErrorActionPreference = 'Stop'
 #region Variables for the scenario
 ## Optional bandwidth shaping parameters. Change the values to suit your
@@ -118,3 +119,4 @@ for ($i = 0; $i -lt $StorageNetAdapterName.Count; $i++)
 $StorageIPAddress[$i] -PrefixLength $StoragePrefix -Verbose
  }
 }
+```
