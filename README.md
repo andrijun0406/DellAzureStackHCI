@@ -21,3 +21,8 @@ This script is applicable to:
 * Script should be executed per Host
 * Script will configure based on Network Adapter Type (QLogic will use iWARP, Mellanox will use ROCEv2)
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
+
+[Task 04 - Enable RDMA on Storage Adapters](Enable-DellNetAdapterRdma.ps1)
+* Script should be executed per Host
+* Only Storage Adapters will be RDMA enabled
+* Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
