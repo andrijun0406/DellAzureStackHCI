@@ -12,7 +12,7 @@ This script is applicable to:
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
 2. Active Directory are in-place with users setup as Admin and Local Admin in each of cluster nodes
 3. DNS are in-place and FQDN are resolved for related IP address configured
-4. Download ISO image which consists all the scrips provided in this repo
+4. Download [ISO image](Deployment-Script-.iso) which consists all the scrips provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
 
 ## PreDeployment Configuration
 
