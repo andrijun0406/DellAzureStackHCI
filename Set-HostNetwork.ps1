@@ -125,13 +125,11 @@ for ($i = 0; $i -lt $StorageNetAdapterName.Count; $i++)
  if ($storageVlan -and ($storageVlan -ne 0))
  {
  # Set VM Network adapter VLAN only if the VLAN ID specified is other than 0
- Set-NetAdapterAdvancedProperty -Name $StorageNetAdapterName[$i] -DisplayName
-'VLAN ID' -DisplayValue $storageVlan -Verbose
+ Set-NetAdapterAdvancedProperty -Name $StorageNetAdapterName[$i] -DisplayName 'VLAN ID' -DisplayValue $storageVlan -Verbose
  Start-Sleep -Seconds 5
  }
  if ($StorageIPAddress[$i] -ne 'DHCP')
  {
- $null = New-NetIPAddress -InterfaceAlias $StorageNetAdapterName[$i] -IPAddress
-$StorageIPAddress[$i] -PrefixLength $StoragePrefix -Verbose
+ $null = New-NetIPAddress -InterfaceAlias $StorageNetAdapterName[$i] -IPAddress $StorageIPAddress[$i] -PrefixLength $StoragePrefix -Verbose
  }
 }
