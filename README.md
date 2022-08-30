@@ -13,7 +13,7 @@ This script is applicable to:
 2. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
 3. Best practice is to create a new OU and setup rights to create new objects inside the OU.
 3. DNS are in-place and FQDN are resolved for related IP address configured
-4. Download [ISO image](Deployment-Script-.iso) which consists all the scrips provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
+4. Download [ISO image](Deployment-Script-.iso) which consists all the scripts provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
 
 ## PreDeployment Configuration
 
