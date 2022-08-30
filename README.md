@@ -4,7 +4,9 @@ This script is applicable to:
 1. Azure Stack HCI Operating System, version 20H2 and 21H2
 2. Dell Integrated System for Azure Stack HCI Hardware delivered from Dell (a.k.a AX nodes)
 3. Scalable network options with RDMA capable TOR switches using Dell Switches and Non-Converged Network (separate Storage traffic and VM/Management Traffic)
-4. The sequence of the script is following [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+4. The sequence of the script is following [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/), but adjusted to the following condition which may occur in customer environment:
+    * Uplink to internet and management network are not up yet or will only be up after all the deployment prerequisite are done
+    * Proxy and Firewall policy are in place in customer environment
 
 ## Deployment Prerequisite
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
@@ -13,7 +15,7 @@ This script is applicable to:
 
 ## PreDeployment Configuration
 
-Task 01 - Configuring iDRAC and BIOS
+### Task 01 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
 * Perform the following steps to configure iDRAC IPv4 addresses in each hosts:
 1. During the system boot, press F12.
