@@ -10,7 +10,8 @@ This script is applicable to:
 
 ## Deployment Prerequisite
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
-2. Active Directory are in-place with users setup as Admin and Local Admin in each of cluster nodes
+2. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
+3. Best practice is to create a new OU and setup rights to create new objects inside the OU.
 3. DNS are in-place and FQDN are resolved for related IP address configured
 4. Download [ISO image](Deployment-Script-.iso) which consists all the scrips provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
 
@@ -29,6 +30,8 @@ This script is applicable to:
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 ### Task 02 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
+*
+* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 ### [Task 03 - Configuring Network Switches](SwitchDellRoce.conf)
 * Config should be imported per TOR switches (TOR switch A and B)
