@@ -16,7 +16,7 @@ $managementBandwidthWeight = 10
 # VLAN ID for backup traffic; if no VLAN is preferred set this to 0
 #$backupVlanId = 100
 
-# Set this to a string 'DHCP' for a dynamic IP address
+# Set this to a string 'DHCP' for a dynamic IP address - Input per Host if static
 #$backupIPAddress = '172.16.105.51'
 
 # Backup network address prefix (24 translates to subnet mask 255.255.255.0)
@@ -36,8 +36,11 @@ $ManagementGateway = '10.189.192.1'
 # DNS Server Address
 $ManagementDns = '10.189.217.2'
 
-# Set this to a string 'DHCP' for a dynamic IP address
+# Set this to a string 'DHCP' for a dynamic IP address - Input IP Address per Host if static
 $ManagementIPAddress = '10.189.192.62'
+#$ManagementIPAddress = '10.189.192.63'
+#$ManagementIPAddress = '10.189.192.64'
+#$ManagementIPAddress = '10.189.192.65'
 
 # Management address prefix (24 translates to subnet mask 255.255.255.0)
 $ManagementAddressPrefix = 24
