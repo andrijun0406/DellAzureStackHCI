@@ -63,4 +63,5 @@ This script is applicable to:
   
 [Task 06 - Enable Jumbo Frame](Set-JumboFrame.ps1)
 * Script should be executed per Host
+* Only Storage Adapters will be set with Jumbo Frame
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
