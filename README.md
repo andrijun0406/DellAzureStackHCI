@@ -1,4 +1,4 @@
-# Deployment and Management PowerShell Script Compilation
+# Deployment and Management PowerShell Scripts Compilation
 
 This script is applicable to:
 1. Azure Stack HCI Operating System, version 20H2 and 21H2
