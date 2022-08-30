@@ -84,7 +84,7 @@ This script is applicable to:
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 09 - Validate RDMA
-* Run the [Test RDMA Script]
+* Run the [Test RDMA Script](Test-
 * Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
