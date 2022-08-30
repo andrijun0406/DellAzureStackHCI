@@ -54,8 +54,11 @@ $StorageNetAdapterName = @('SLOT 3 PORT 1', 'SLOT 3 PORT 2')
 $StorageVlanId = @(101, 102)
 
 ### You must specify 2 or 4 IP Addresses
-### DHCP as a value is accepted if you want dynamically assigned IP addresses
+### DHCP as a value is accepted if you want dynamically assigned IP addresses - Input IP address per host if static
 $StorageIPAddress = @('192.168.101.11', '192.168.102.11')
+#$StorageIPAddress = @('192.168.101.12', '192.168.102.12')
+#$StorageIPAddress = @('192.168.101.13', '192.168.102.13')
+#$StorageIPAddress = @('192.168.101.14', '192.168.102.14')
 ### You can specify 1 or 2 or 4 prefix length values (24 translates to subnet mask 255.255.255.0)
 $StorageAddressPrefix = @(24)
 
