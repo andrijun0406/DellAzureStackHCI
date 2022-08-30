@@ -16,12 +16,12 @@ This script is applicable to:
 Task 01 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
 * Perform the following steps to configure iDRAC IPv4 addresses in each hosts:
-  1. During the system boot, press F12.
-  2. At System Setup Main Menu, select iDRAC Settings.
-  3. Under iDRAC Settings, select Network.
-  4. Under IPV4 SETTINGS, at Enable IPv4, select Enabled.
-  5. Enter the static IPv4 address details.
-  6. Click Back, and then click Finish.
+1. During the system boot, press F12.
+2. At System Setup Main Menu, select iDRAC Settings.
+3. Under iDRAC Settings, select Network.
+4. Under IPV4 SETTINGS, at Enable IPv4, select Enabled.
+5. Enter the static IPv4 address details.
+6. Click Back, and then click Finish.
 
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
