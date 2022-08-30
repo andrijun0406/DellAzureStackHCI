@@ -100,6 +100,8 @@ C:\Script\Test-Rdma.ps1 -ifIndex 17 -IsRoCE $true -RemoteIpAddress 192.168.101.1
 The result will look like the following:
 ![Test-RDMA-Result](Test-RDMA-Result.png)
 * Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
+
+### Task 11 - Setup Proxy to connect to internet (optional depending on your environment)
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
    At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS
