@@ -29,7 +29,7 @@ This script is applicable to:
 
 [Task 05 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Enable-DellNetAdapterRdma.ps1)
 * Script should be executed per Host
-* DCB and QoS must be set on TOR switches and the Hosts as the following tables
+* DCB and QoS must be set on TOR switches and the Hosts as the following tables:
 
 | QoS Priority  | QoS Flow Control | Purpose                  |
 | ------------- | ---------------- | ------------------------ |
