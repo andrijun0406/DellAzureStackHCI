@@ -9,6 +9,8 @@ This script is applicable to:
 1. Active Directory are in-place with users setup as Admin and Local Admin in each of cluster nodes
 2. DNS are in-place and FQDN are resolved for related IP address configured
 
+# PreDeployment Configuration
+
 [Task 01 - Configuring Network Switches](SwitchDellRoce.conf)
 * Config should be imported per TOR switches (TOR switch A and B)
 * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
