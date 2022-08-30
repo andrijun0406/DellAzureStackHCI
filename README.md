@@ -17,6 +17,20 @@ This script is applicable to:
 
 [Task 02 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
 * Script should be executed per Host
+* Sample of Physical Network Adapter in AX-750 mapping (adjust per customer requirement):
+
+| Name                      | InterfaceDescription                    | ifIndex | Status       | IP Address (sample) | Vlan (sample) | Purpose                  |
+| ------------------------- | --------------------------------------- | ------- | ------------ |
+| Slot 3 Port 1             | Mellanox ConnectX-5 adapter #3          | 17      | Up           | 0 - Best effort traffic  |
+| Slot 3 Port 2             | Mellanox ConnectX-5 adapter #4          | 8       | Up           |
+| Integrated NIC 1 Port 1-1 | Broadcom NetXtreme E-Series Advanced    | 11      | Up           | Cluster Network          |
+| Integrated NIC 1 Port 2-1 | Broadcom NetXtreme E-Series Advanced #2 | 10      | Up           |
+| vEthernet (Management)    | Hyper-V Virtual Ethernet Adapter        | 14      | Up           |
+| Slot 6 Port 1             | Mellanox ConnectX-5 adapter             | 2       | Disconnected | 
+| Slot 6 port 2             | Mellanox ConnectX-5 adapter #2          | 9       | Disconnected |
+| Embedded NIC 1            | Broadcom NetXtrem Gigabit Ethernet #2   | 7       | Disconnected |
+| Embedded NIC 2            | Broadcom NetXtrem Gigabit Ethernet      | 3       | Disconnected |
+
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
 [Task 03 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
