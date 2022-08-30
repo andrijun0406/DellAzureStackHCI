@@ -59,3 +59,6 @@ This script is applicable to:
 
 * Manually disable DCB on the management adapters using the command Disable-NetAdapterQos <nicName>.
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
+  
+[Task 06 - Enable Jumbo Frame](Set-JumboFrame.ps1)
+* Script should be executed per Host
