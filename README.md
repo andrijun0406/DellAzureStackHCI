@@ -27,11 +27,13 @@ This script is applicable to:
 
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
-[Task 01 - Configuring Network Switches](SwitchDellRoce.conf)
+### Task 02 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
+
+### [Task 03 - Configuring Network Switches](SwitchDellRoce.conf)
 * Config should be imported per TOR switches (TOR switch A and B)
 * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 
-[Task 02 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
+### [Task 04 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
 * Script should be executed per Host
 * Sample of Physical Network Adapter in AX-750 mapping (adjust per customer requirement):
 
@@ -52,17 +54,17 @@ This script is applicable to:
 
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-[Task 03 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
+### [Task 05 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
 * Script should be executed per Host
 * Script will configure based on Network Adapter Type (QLogic will use iWARP, Mellanox will use ROCEv2)
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-[Task 04 - Enable RDMA on Storage Adapters](Enable-DellNetAdapterRdma.ps1)
+### [Task 06 - Enable RDMA on Storage Adapters](Enable-DellNetAdapterRdma.ps1)
 * Script should be executed per Host
 * Only Storage Adapters will be RDMA enabled
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-[Task 05 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Set-DellNetQos.ps1)
+### [Task 07 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Set-DellNetQos.ps1)
 * Script should be executed per Host
 * DCB and QoS must be set on TOR switches and the Hosts as the following tables:
 
@@ -75,7 +77,7 @@ This script is applicable to:
 * Manually disable DCB on the management adapters using the command Disable-NetAdapterQos <nicName>.
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
   
-[Task 06 - Enable Jumbo Frame](Set-JumboFrame.ps1)
+### [Task 08 - Enable Jumbo Frame](Set-JumboFrame.ps1)
 * Script should be executed per Host
 * Only Storage Adapters will be set with Jumbo Frame
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
