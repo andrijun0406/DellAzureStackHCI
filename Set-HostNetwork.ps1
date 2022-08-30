@@ -10,8 +10,8 @@ $managementBandwidthWeight = 10
 
 ## Backup Adapter (Optional)
 #$backupAdapterName = 'Backup'
-#$backupNetAdapterName = @('SLOT 6 PORT 1', 'SLOT 6 PORT 2')
-#$backupNetAdapterName = @('Embedded NIC 1', 'Embedded NIC 2')
+#$backupNetAdapterName = @('SLOT 6 PORT 1', 'SLOT 6 PORT 2') # should be disabled if not used
+#$backupNetAdapterName = @('Embedded NIC 1', 'Embedded NIC 2') # should be disabled if not used
 
 # VLAN ID for backup traffic; if no VLAN is preferred set this to 0
 #$backupVlanId = 100
@@ -90,6 +90,7 @@ if ($ManagementIPAddress -ne 'DHCP')
 # $null = New-NetIPAddress -InterfaceAlias "vEthernet ($backupAdapterName)" -IPAddress
 #$backupIPAddress -PrefixLength $backupAddressPrefix -Verbose
 #}
+
 ### Management and backup adapter optional configuration
 #Set-VMNetworkAdapter -ManagementOS -Name $ManagementAdapterName -MinimumBandwidthWeight
 #$managementBandwidthWeight
@@ -97,6 +98,7 @@ if ($ManagementIPAddress -ne 'DHCP')
 #$backupBandwidthWeight
 #Set-VMSwitch -Name $ManagementSwitchName -DefaultFlowMinimumBandwidthWeight
 #$defaultFlowMinimumBandwidthWeight
+
 ### Configure storage adapters
 for ($i = 0; $i -lt $StorageNetAdapterName.Count; $i++)
 {
