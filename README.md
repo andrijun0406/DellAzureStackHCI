@@ -102,6 +102,7 @@ The result will look like the following:
 * Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
+   At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS
 ### Task 01 - Installing Roles and Features
 ### Task 02 - Joining Cluster Nodes to an Active Directory Domain
 ### Task 03 - Deploying and Configuring Cluster
