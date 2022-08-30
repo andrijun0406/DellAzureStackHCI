@@ -13,6 +13,10 @@ This script is applicable to:
 * Config should be imported per TOR switches (TOR switch A and B)
 * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 
-[Task 02 - Non-Converged Host Network Configuration](Set-HostNetwork.ps1)
+[Task 02 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
+* Script should be executed per Host
+* Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
+
+[Task 03 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
 * Script should be executed per Host
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
