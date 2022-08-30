@@ -39,7 +39,9 @@ This script is applicable to:
 * Config should be imported per TOR switches (TOR switch A and B)
 * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 
-### [Task 04 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
+### Task 04 - Changing Hostname
+
+### [Task 05 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
 * Script should be executed per Host
 * Sample of Physical Network Adapter in AX-750 mapping (adjust per customer requirement):
 
@@ -60,17 +62,17 @@ This script is applicable to:
 
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-### [Task 05 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
+### [Task 06 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
 * Script should be executed per Host
 * Script will configure based on Network Adapter Type (QLogic will use iWARP, Mellanox will use ROCEv2)
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-### [Task 06 - Enable RDMA on Storage Adapters](Enable-DellNetAdapterRdma.ps1)
+### [Task 07 - Enable RDMA on Storage Adapters](Enable-DellNetAdapterRdma.ps1)
 * Script should be executed per Host
 * Only Storage Adapters will be RDMA enabled
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-### [Task 07 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Set-DellNetQos.ps1)
+### [Task 08 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Set-DellNetQos.ps1)
 * Script should be executed per Host
 * DCB and QoS must be set on TOR switches and the Hosts as the following tables:
 
@@ -83,12 +85,12 @@ This script is applicable to:
 * Manually disable DCB on the management adapters using the command Disable-NetAdapterQos <nicName>.
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
   
-### [Task 08 - Enable Jumbo Frame](Set-JumboFrame.ps1)
+### [Task 09 - Enable Jumbo Frame](Set-JumboFrame.ps1)
 * Script should be executed per Host
 * Only Storage Adapters will be set with Jumbo Frame
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
-### Task 09 - Validate RDMA
+### Task 10 - Validate RDMA
 * Run the [Test RDMA Script](Test-Rdma.ps1) with the following examples:
 ```powershell
 # Get Interface Index for Storage Adapter
@@ -100,3 +102,10 @@ The result will look like the following:
 * Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
+### Task 01 - Installing Roles and Features
+### Task 02 - Joining Cluster Nodes to an Active Directory Domain
+### Task 03 - Deploying and Configuring Cluster
+### Task 04 - Enabling Storage Spaces Direct
+### Task 05 - Optimization Tasks
+### Task 06 - Configuring Cluster Witness
+### Task 07 - Register the Cluster and onboarding Arc
