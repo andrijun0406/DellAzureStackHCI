@@ -27,7 +27,7 @@ This script is applicable to:
 * Only Storage Adapters will be RDMA enabled
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
-[Task 05 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Enable-DellNetAdapterRdma.ps1)
+[Task 05 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only](Set-DellNetQos.ps1)
 * Script should be executed per Host
 * DCB and QoS must be set on TOR switches and the Hosts as the following tables:
 
