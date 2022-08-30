@@ -19,4 +19,5 @@ This script is applicable to:
 
 [Task 03 - Update Network Adapter Advanced Properties](Set-DellNetAdapterAdvancedProperty.ps1)
 * Script should be executed per Host
+* Script will configured based on Network Adapter Type (QLogic will use iWARP, Mellanox will use ROCEv2)
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
