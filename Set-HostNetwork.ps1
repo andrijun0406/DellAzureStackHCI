@@ -10,6 +10,8 @@ $managementBandwidthWeight = 10
 
 ## Backup Adapter (Optional)
 #$backupAdapterName = 'Backup'
+#$backupNetAdapterName = @('SLOT 6 PORT 1', 'SLOT 6 PORT 2')
+#$backupNetAdapterName = @('Embedded NIC 1', 'Embedded NIC 2')
 
 # VLAN ID for backup traffic; if no VLAN is preferred set this to 0
 #$backupVlanId = 100
@@ -57,28 +59,24 @@ $StorageAddressPrefix = @(24)
 #endregion
 
 ## Create a VM switch for management
-$null = New-VMSwitch -Name $ManagementSwitchName -AllowManagementOS 0 -NetAdapterName
-$ManagementNetAdapterName -MinimumBandwidthMode Weight -Verbose
+$null = New-VMSwitch -Name $ManagementSwitchName -AllowManagementOS 0 -NetAdapterName $ManagementNetAdapterName -MinimumBandwidthMode Weight -Verbose
+
 ## Add VM Network Adapters and configure VLANs and IP addresses as needed
 ### Configure Management Adapter
-$managementAdapter = Add-VMNetworkAdapter -SwitchName $ManagementSwitchName
--ManagementOS -Passthru -Name $ManagementAdapterName -Verbose
+$managementAdapter = Add-VMNetworkAdapter -SwitchName $ManagementSwitchName -ManagementOS -Passthru -Name $ManagementAdapterName -Verbose
 if ($ManagementVlanId -and ($ManagementVlanId -ne 0))
 {
  # Set VM Network adapter VLAN only if the VLAN ID specified is other than 0
- Set-VMNetworkAdapterVlan -VMNetworkAdapter $managementAdapter -Access -VlanId
-$ManagementVlanId -Verbose
+ Set-VMNetworkAdapterVlan -VMNetworkAdapter $managementAdapter -Access -VlanId $ManagementVlanId -Verbose
  Start-Sleep -Seconds 5
 }
 if ($ManagementIPAddress -ne 'DHCP')
 {
- $null = New-NetIPAddress -InterfaceAlias "vEthernet ($ManagementAdapterName)"
--IPAddress $ManagementIPAddress -DefaultGateway $ManagementGateway -PrefixLength
-$ManagementAddressPrefix -Verbose
- Set-DnsClientServerAddress -InterfaceAlias "vEthernet ($ManagementAdapterName)"
--ServerAddresses $ManagementDns -Verbose
+ $null = New-NetIPAddress -InterfaceAlias "vEthernet ($ManagementAdapterName)" -IPAddress $ManagementIPAddress -DefaultGateway $ManagementGateway -PrefixLength $ManagementAddressPrefix -Verbose
+ Set-DnsClientServerAddress -InterfaceAlias "vEthernet ($ManagementAdapterName)" -ServerAddresses $ManagementDns -Verbose
 }
-### Configure Backup Adapter
+
+### Configure Backup Adapter (Optional)
 #$backupAdapter = Add-VMNetworkAdapter -SwitchName $ManagementSwitchName -ManagementOS -Passthru -Name $backupAdapterName -Verbose
 #if ($backupVlanId -and ($backupVlanId -ne 0))
 #{
