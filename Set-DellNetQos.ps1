@@ -27,6 +27,6 @@ Set-NetQosDcbxSetting -Willing $false
 #Enable IEEE Priority Tag on all network interfaces to ensure the vSwitch does not drop
 the VLAN tag information.
 $nics = Get-VMNetworkAdapter -ManagementOS
-ForEach ($nic in $nics) {
+foreach ($nic in $nics) {
   Set-VMNetworkAdapter -VMNetworkAdapter $nic -IeeePriorityTag ON
 }
