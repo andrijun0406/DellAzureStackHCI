@@ -6,12 +6,12 @@ This script is applicable to:
 3. Scalable network options with RDMA capable TOR switches using Dell Switches and Non-Converged Network (separate Storage traffic and VM/Management Traffic)
 4. The sequence of the script is following [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
-# Deployment Prerequisite
+## Deployment Prerequisite
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
 2. Active Directory are in-place with users setup as Admin and Local Admin in each of cluster nodes
 3. DNS are in-place and FQDN are resolved for related IP address configured
 
-# PreDeployment Configuration
+## PreDeployment Configuration
 
 Task 01 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
