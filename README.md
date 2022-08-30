@@ -31,11 +31,11 @@ This script is applicable to:
 * Script should be executed per Host
 * DCB and QoS must be set on TOR switches and the Hosts as the following tables:
 
-| QoS Priority  | QoS Flow Control | Purpose                  |
-| ------------- | ---------------- | ------------------------ |
-| 0-2,4,6,7     | Disabled         | 0 - Best effort traffic  |
-| 3             | Enabled          | RDMA                     |
-| 5             | Disabled         | Cluster Network          |
+| QoS Priority  | QoS Flow Control | % Bandwidth | Purpose                  |
+| ------------- | ---------------- | ----------- | ------------------------ |
+| 0-2,4,6,7     | Disabled         | N/A         | 0 - Best effort traffic  |
+| 3             | Enabled          | 50          | SMB/RDMA                 |
+| 5             | Disabled         | 2           | Cluster Network          |
 
 * Manually disable DCB on the management adapters using the command Disable-NetAdapterQos <nicName>.
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
