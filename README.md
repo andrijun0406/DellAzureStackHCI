@@ -6,8 +6,9 @@ This script is applicable to:
 3. Scalable network options with RDMA capable TOR switches using Dell Switches and Non-Converged Network (separate Storage traffic and VM/Management Traffic)
 
 # Deployment Prerequisite
-1. Active Directory are in-place with users setup as Admin and Local Admin in each of cluster nodes
-2. DNS are in-place and FQDN are resolved for related IP address configured
+1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
+2. Active Directory are in-place with users setup as Admin and Local Admin in each of cluster nodes
+3. DNS are in-place and FQDN are resolved for related IP address configured
 
 # PreDeployment Configuration
 
