@@ -163,6 +163,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    
 ### Task 03 - Deploying and Configuring Cluster
 Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
+
 #### Task 03a - Prep for cluster setup
 As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
 ```powershell
@@ -172,7 +173,14 @@ As a sanity check first, consider running the following commands to make sure th
 ```
 if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
 ![PrepForCluster](PrepForCluster.png)
+ * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
+ 
 #### Task 03b - Prepare drives
+Before you enable Storage Spaces Direct, ensure your permanent drives are empty. 
+ * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
+ * Script should be executed via Remote PowerShell on WAC/Management hosts
+ * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
+ 
 #### Task 03c - Test cluster configuration
 #### Task 03d - Create the Cluster
 ### Task 04 - Enabling Storage Spaces Direct
