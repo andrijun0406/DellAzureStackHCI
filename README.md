@@ -162,7 +162,14 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 03 - Deploying and Configuring Cluster
+Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
 #### Task 03a - Prep for cluster setup
+As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
+```powershell
+   Get-ClusterNode
+   Get-ClusterResource
+   Get-ClusterNetwork
+```
 #### Task 03b - Prepare drives
 #### Task 03c - Test cluster configuration
 #### Task 03d - Create the Cluster
