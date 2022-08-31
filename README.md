@@ -148,6 +148,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
      * NetworkATC (optional if you are using NetworkATC)
      * Storage Replica (optional for stretched clusters)
    * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script in one of the cluster node
+   * Although hyper-v services usually already installed in factory, and no need to restart when install other services, but the script restart the node anyway.
    * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
