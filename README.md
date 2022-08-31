@@ -124,6 +124,13 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
 ## Deploy Azure Stack HCI Cluster with PowerShell
    At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to safely open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS and internet (Azure).
 ### Task 01 - Installing Roles and Features
+   * Deployment and configuration of an Azure Stack HCI operating system version 20H2 or 21H2 cluster requires enabling specific operating system roles and features. Enable the following roles and features:
+     * Hyper-V service (not required if the operating system is factory-installed)
+     * Failover clustering
+     * Data center bridging (DCB) (required only when implementing fully converged network topology with RoCE and when implementing DCB for the fully converged topology with iWARP)
+     * BitLocker (optional)
+     * File Server (optional)
+     * FS-Data-Deduplication module (optional)
 ### Task 02 - Joining Cluster Nodes to an Active Directory Domain
 ### Task 03 - Deploying and Configuring Cluster
 ### Task 04 - Enabling Storage Spaces Direct
