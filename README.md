@@ -78,19 +78,19 @@ This script is applicable to:
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
 ### Task 06 - Update Network Adapter Advanced Properties
-* Run [Set-DellNetAdapterAdvancedProperty](Set-DellNetAdapterAdvancedProperty.ps1)
+* Run [Set-DellNetAdapterAdvancedProperty](Set-DellNetAdapterAdvancedProperty.ps1) script
 * Script should be executed per Host
 * Script will configure based on Network Adapter Type (QLogic will use iWARP, Mellanox will use ROCEv2)
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
 ### Task 07 - Enable RDMA on Storage Adapters
-* Run [Enable-DellNetAdapterRdma](Enable-DellNetAdapterRdma.ps1)
+* Run [Enable-DellNetAdapterRdma](Enable-DellNetAdapterRdma.ps1) script
 * Script should be executed per Host
 * Only Storage Adapters will be RDMA enabled
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
 ### Task 08 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only
-* Run [Set-DellNetQos](Set-DellNetQos.ps1)
+* Run [Set-DellNetQos](Set-DellNetQos.ps1) script
 * Script should be executed per Host
 * DCB and QoS must be set on TOR switches and the Hosts as the following tables:
 
@@ -103,8 +103,8 @@ This script is applicable to:
 * Manually disable DCB on the management adapters using the command Disable-NetAdapterQos <nicName>.
 * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
   
-### [Task 09 - Enable Jumbo Frame]
-* Run [Set-JumboFrame](Set-JumboFrame.ps1)
+### Task 09 - Enable Jumbo Frame
+* Run [Set-JumboFrame](Set-JumboFrame.ps1) script
 * Script should be executed per Host
 * Only Storage Adapters will be set with Jumbo Frame
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
