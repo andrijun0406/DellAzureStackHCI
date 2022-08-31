@@ -109,7 +109,7 @@ The result will look like the following:
 * Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
 
 ### Task 11 - Setup Proxy on Cluster Nodes to connect to internet (optional depending on your environment)
-   * Review the firewall and proxy requirement here: [Azure Stack HCI Firewall Requirements](https://docs.microsoft.com/en-us/azure-stack/hci/concepts/firewall-requirements)and configure your external firewall and proxy accordingly.
+   * Review the firewall and proxy requirement here: [Azure Stack HCI Firewall Requirements](https://docs.microsoft.com/en-us/azure-stack/hci/concepts/firewall-requirements) and configure your external firewall and proxy accordingly.
    * There are two ways to configure Proxy in the Cluster nodes, 1) using netsh (no need to install anything), 2) using Set-WinInetProxy (you need to install WinInetProxy module first offline, since currently no uplink connection is opened yet)
    * The following are samples when using netsh command tool:
 ```powershell
