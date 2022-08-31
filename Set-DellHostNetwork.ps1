@@ -140,7 +140,6 @@ for ($i = 0; $i -lt $StorageNetAdapterName.Count; $i++)
  }
 }
 
-
 # Disabled unused adapter
 # Unused Adapter (disable these adapters if not used so it is not participate in Cluster Network)
 $unusedNetAdapterName = @('SLOT 6 PORT 1', 'SLOT 6 PORT 2', 'Embedded NIC 1', 'Embedded NIC 2')
