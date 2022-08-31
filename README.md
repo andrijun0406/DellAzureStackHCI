@@ -4,9 +4,10 @@ This script is applicable to:
 1. Azure Stack HCI Operating System, version 20H2 and 21H2
 2. Dell Integrated System for Azure Stack HCI Hardware delivered from Dell (a.k.a AX nodes)
 3. Scalable network options with RDMA capable TOR switches using Dell Switches and Non-Converged Network (separate Storage traffic and VM/Management Traffic)
-4. The sequence of the script is following [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/), but adjusted to the following condition which may occur in customer environment:
+4. The sequence of the script and its content is following [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/), but adjusted to the following condition which may occur in customer environment:
     * Uplink to internet and management network are not up yet or will only be up after all the deployment prerequisite are done
     * Proxy and Firewall policy are in place in customer environment
+    * Multiple physical NIC is ordered but not used for cluster (for other application purposes like backup)
 
 ## Deployment Prerequisite
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
