@@ -153,6 +153,11 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 02 - Joining Cluster Nodes to an Active Directory Domain
+   * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
+   * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
+   * Script should be executed per Host
+   * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+   
 ### Task 03 - Deploying and Configuring Cluster
 ### Task 04 - Enabling Storage Spaces Direct
 ### Task 05 - Optimization Tasks
