@@ -53,7 +53,8 @@ This script is applicable to:
 * Script should be executed per Host
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
-### [Task 05 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
+### Task 05 - Non-Converged Host Network Configuration
+* This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
 * Script should be executed per Host
 * Sample of Physical Network Adapter in AX-750 mapping (adjust per customer requirement):
 
