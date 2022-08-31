@@ -139,7 +139,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
 ### Task 01 - Joining Cluster Nodes to an Active Directory Domain
    * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
    * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
-   * Script should be executed per Host
+   * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
    * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
@@ -155,12 +155,11 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
      * RSAT-AD-Clustering-PowerShell module
      * NetworkATC (optional if you are using NetworkATC)
      * Storage Replica (optional for stretched clusters)
-   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script in one of the cluster node
+   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script
+   * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
    * Although hyper-v services usually already installed in factory, and no need to restart when install other services, but the script restart the node anyway.
    * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
-   
-
    
 ### Task 03 - Deploying and Configuring Cluster
 ### Task 04 - Enabling Storage Spaces Direct
