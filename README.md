@@ -170,6 +170,8 @@ As a sanity check first, consider running the following commands to make sure th
    Get-ClusterResource
    Get-ClusterNetwork
 ```
+if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
+![PrepForCluster](PrepForCluster.png)
 #### Task 03b - Prepare drives
 #### Task 03c - Test cluster configuration
 #### Task 03d - Create the Cluster
