@@ -1,6 +1,4 @@
 $ServerList = "HCINPRDHST001", "HCINPRDHST002", "HCINPRDHST003", "HCINPRDHST004"
-$ClusterName = "HCINPRDCLU001"
-$ClusterIPAddress ="10.189.192.66"
 
 #Disable USB NIC used by iDRAC to communicate to host just for test-cluster (only applies to physical servers)
 $USBNics=get-netadapter -CimSession $ServerList -InterfaceDescription "Remote NDIS Compatible Device" -ErrorAction Ignore
