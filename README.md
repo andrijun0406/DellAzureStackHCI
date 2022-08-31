@@ -47,6 +47,9 @@ This script is applicable to:
 * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 
 ### Task 04 - Changing Hostname
+* Change the hostname according to your organization's standard convention naming.
+* Use **sconfig** to change hostname or use the following script [Change-Hostname](Change-Hostname.ps1)
+* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 ### [Task 05 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
 * Script should be executed per Host
@@ -135,7 +138,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
      * RSAT-AD-Clustering-PowerShell module
      * NetworkATC (optional if you are using NetworkATC)
      * Storage Replica (optional for stretched clusters)
-   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script.
+   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script in one of the cluster node
    * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
