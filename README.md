@@ -42,13 +42,15 @@ This script is applicable to:
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 * Reference: [ HCI Operation Guide ](https://infohub.delltechnologies.com/t/hci-operations-guide-managing-and-monitoring-the-solution-infrastructure-life-cycle/)
 
-### [Task 03 - Configuring Network Switches](SwitchDellRoce.conf)
+### Task 03 - Configuring Network Switches
+* Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
 * Config should be imported per TOR switches (TOR switch A and B)
 * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 
 ### Task 04 - Changing Hostname
 * Change the hostname according to your organization's standard convention naming.
 * Use **sconfig** to change hostname or use the following script [Change-Hostname](Change-Hostname.ps1)
+* Script should be executed per Host
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 ### [Task 05 - Non-Converged Host Network Configuration](Set-DellHostNetwork.ps1)
