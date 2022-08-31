@@ -131,6 +131,12 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
      * BitLocker (optional)
      * File Server (optional)
      * FS-Data-Deduplication module (optional)
+     * RSAT-AD-PowerShell module (optional)
+     * RSAT-AD-Clustering-PowerShell module
+     * NetworkATC (optional if you are using NetworkATC)
+     * Storage Replica (optional for stretched clusters)
+   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script.
+   
 ### Task 02 - Joining Cluster Nodes to an Active Directory Domain
 ### Task 03 - Deploying and Configuring Cluster
 ### Task 04 - Enabling Storage Spaces Direct
