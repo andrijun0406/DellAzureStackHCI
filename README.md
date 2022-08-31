@@ -182,6 +182,14 @@ Before you enable Storage Spaces Direct, ensure your permanent drives are empty.
  * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
  
 #### Task 03c - Test cluster configuration
+In this step, you'll ensure that the server nodes are configured correctly to create a cluster.
+* Run the [Dell-Test-Cluster](Dell-Test-Cluster.ps1) script to test the cluster readiness
+* Script should be executed via Remote PowerShell on one of the Cluster Node
+* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
+* Review the report before creating a cluster and remediate if there are issues.
+* Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
+* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+
 #### Task 03d - Create the Cluster
 ### Task 04 - Enabling Storage Spaces Direct
 ### Task 05 - Optimization Tasks
