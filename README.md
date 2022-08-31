@@ -34,6 +34,7 @@ This script is applicable to:
 * Run the [Get-DellDeviceDriver](Get-DellDeviceDriver.ps1) script to check installed drivers and firmware and check with latest [Support Matrix](https://www.dell.com/support/kbdoc/en-us/000126014/support-matrix-for-dell-emc-solutions-for-microsoft-azure-stack-hci)
 * The result of the script will look like this:
 ![Check Driver Result](Check-Driver.png)
+* Download firmware and BIOS from ... and update using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
 * Download the driver from .. and update them.
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
