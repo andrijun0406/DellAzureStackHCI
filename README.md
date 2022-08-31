@@ -135,7 +135,15 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
    At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to safely open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS and internet (Azure).
-### Task 01 - Installing Roles and Features
+   
+### Task 01 - Joining Cluster Nodes to an Active Directory Domain
+   * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
+   * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
+   * Script should be executed per Host
+   * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
+   * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+   
+### Task 02 - Installing Roles and Features
    * Deployment and configuration of an Azure Stack HCI operating system version 20H2 or 21H2 cluster requires enabling specific operating system roles and features. Enable the following roles and features:
      * Hyper-V service (not required if the operating system is factory-installed)
      * Failover clustering
@@ -152,11 +160,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
-### Task 02 - Joining Cluster Nodes to an Active Directory Domain
-   * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
-   * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
-   * Script should be executed per Host
-   * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+
    
 ### Task 03 - Deploying and Configuring Cluster
 ### Task 04 - Enabling Storage Spaces Direct
