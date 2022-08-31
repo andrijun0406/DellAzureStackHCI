@@ -55,6 +55,7 @@ This script is applicable to:
 
 ### Task 05 - Non-Converged Host Network Configuration
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
+* This script also disabled Network Adapter which are not currenlty being used to prevent being added as Cluster Network (except for Ethernet RNDIS adapter which are used for iDRAC to OS redfish interface)
 * Script should be executed per Host
 * Sample of Physical Network Adapter in AX-750 mapping (adjust per customer requirement):
 
