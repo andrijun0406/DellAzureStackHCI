@@ -32,6 +32,8 @@ This script is applicable to:
 ### Task 02 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
 * Most of the time the pre-installed OS and firmware/bios/driver has been installed with up to date release, but to make sure please check again here before we connect to uplink network.
 * Run the [Get-DellDeviceDriver](Get-DellDeviceDriver.ps1) script to check installed drivers and firmware and check with latest [Support Matrix](https://www.dell.com/support/kbdoc/en-us/000126014/support-matrix-for-dell-emc-solutions-for-microsoft-azure-stack-hci)
+* The result of the script will look like this:
+![Check Driver Result](Check-Driver.png)
 * Download the driver from .. and update them.
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
