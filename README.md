@@ -122,7 +122,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
 * The 169.254. IP address wild card is used to bypass proxy for Ethernet RNDIS which used for iDRAC to OS redfish integration used in OpenManage Integration with Windows Admin Centre (OMIWAC).
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
-   At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS and internet (Azure).
+   At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to safely open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS and internet (Azure).
 ### Task 01 - Installing Roles and Features
 ### Task 02 - Joining Cluster Nodes to an Active Directory Domain
 ### Task 03 - Deploying and Configuring Cluster
