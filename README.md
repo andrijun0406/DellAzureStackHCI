@@ -162,6 +162,10 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 03 - Deploying and Configuring Cluster
+#### Task 03a - Prep for cluster setup
+#### Task 03b - Prepare drives
+#### Task 03c - Test cluster configuration
+#### Task 03d - Create the Cluster
 ### Task 04 - Enabling Storage Spaces Direct
 ### Task 05 - Optimization Tasks
 ### Task 06 - Configuring Cluster Witness
