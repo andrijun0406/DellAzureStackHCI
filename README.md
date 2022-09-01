@@ -191,6 +191,8 @@ In this step, you'll ensure that the server nodes are configured correctly to cr
 * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 #### Task 03d - Create the Cluster
+You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
+
 ### Task 04 - Enabling Storage Spaces Direct
 ### Task 05 - Optimization Tasks
 ### Task 06 - Configuring Cluster Witness
