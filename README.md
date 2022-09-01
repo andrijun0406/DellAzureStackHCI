@@ -205,6 +205,9 @@ To help ensure that the active memory dump is captured if a fatal system error o
 * Perform this update on all Storage Spaces Direct nodes immediately after initial deployment. Update one node at a time and wait until each node rejoins the cluster.
 
 ### Task 06 - Configuring Cluster Witness
+Cluster witness configuration helps maintain a cluster or storage quorum when a node or network communication fails and nodes continue to operate but can no longer communicate with one another. A cluster witness can be either a file share or a cloud-based witness. Here we are configuring cloud-based witness as best practice whenever it is feasible to do so.
+* Run this script [Create-Cloud-Witness](Create-Cloud-Witness.ps1) in one of the cluster node.
+
 ### Task 07 - Register the Cluster and onboarding Arc
 ## References
  * [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
