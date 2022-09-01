@@ -210,6 +210,18 @@ Cluster witness configuration helps maintain a cluster or storage quorum when a 
 * This script will automatically create a Resource Group and Storage Account based on your Azure Subscription account.
 
 ### Task 07 - Register the Cluster and onboarding Arc
+* If your AX nodes comes with pre-installed HCI OS 20H2, then it is recommended to upgrade first to 21H2 so the cluster nodes will be arc-enabled automatically.
+* Install the required cmdlets first:
+```powershell
+  Install-Module -Name Az.StackHCI
+``` 
+* Run the following command to register the cluster, customize variables to suit your environment.
+```powershell
+   $subscriptionid = "1234"
+   $resourcegroup = "my-RG"
+   Register-AzStackHCI -SubscriptionId $subscriptionid -ResourceGroupName $resourcegroup 
+```   
+* The following script 
 ## References
  * [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
  * [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
