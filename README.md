@@ -186,7 +186,11 @@ Get-Cluster -Name $ClusterName | Get-ClusterResource
 * Script will verify the storage pool after it is created.
   
 ### Task 05 - Optimization Tasks
+   
 #### Task 05a - Configuring the host management network as a lower-priority network for live migration
+After you create the cluster, live migration is configured by default to use all available networks. During normal operations, using the host management network for live migration traffic might impede the overall cluster role functionality and availability. Rather than disabling live migration traffic on the host management network, configure the host management network as a lower-priority network in the live migration network order. 
+* Run the [Set-Live-Migration](Set-Live-Migration.ps1) script from one of the cluster node
+   
 #### Task 05b - Configuring Ethernet RNDIS to not participate in Cluster Communication
 #### Task 05c - Updating the Page File Setting
 #### Task 05d - Update the hardware timeout for the Spaces port
