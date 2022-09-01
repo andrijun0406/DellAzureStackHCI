@@ -196,6 +196,9 @@ USB NICs used for IDRAC to Host interface can not be disabled to ensure OMIWAC i
 * Run the [Disable-Rndis](Disable-Rndis.ps1) script from Remote PowerShell
 
 #### Task 05c - Updating the Page File Setting
+To help ensure that the active memory dump is captured if a fatal system error occurs, allocate sufficient space for the page file. Dell Technologies recommends allocating at least 50 GB plus the size of the CSV block cache.
+* Run the [Update-Pagefile](Update-Pagefile.ps1) script from remote powershell to each of the cluster nodes
+   
 #### Task 05d - Update the hardware timeout for the Spaces port
 ### Task 06 - Configuring Cluster Witness
 ### Task 07 - Register the Cluster and onboarding Arc
