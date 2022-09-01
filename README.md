@@ -28,8 +28,6 @@ This script is applicable to:
 5. Enter the static IPv4 address details.
 6. Click **Back**, and then click **Finish**.
 
-* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
-
 ### Task 02 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
 * Most of the time the pre-installed OS and firmware/bios/driver has been installed with up to date release, but to make sure please check again here before we connect to uplink network.
 * Run the [Get-DellComputerInfo](Get-DellComputerInfo.ps1) script to check installed OS and it's version.
@@ -40,19 +38,15 @@ This script is applicable to:
 ![Check Driver Result](Check-Driver.png)
 * Download firmware and BIOS from [Dell Support](https://www.dell.com/support/home/en-us) and update using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
 * Download the driver from [Dell Support](https://www.dell.com/support/home/en-us) and update them using DRM as mentioned in the reference below
-* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
-* Reference: [ HCI Operation Guide ](https://infohub.delltechnologies.com/t/hci-operations-guide-managing-and-monitoring-the-solution-infrastructure-life-cycle/)
 
 ### Task 03 - Configuring Network Switches
 * Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
 * Config should be imported per TOR switches (TOR switch A and B)
-* Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 
 ### Task 04 - Changing Hostname
 * Change the hostname according to your organization's standard convention naming.
 * Use **sconfig** to change hostname or use the following script [Change-Hostname](Change-Hostname.ps1)
 * Script should be executed per Host
-* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 ### Task 05 - Non-Converged Host Network Configuration
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
@@ -75,19 +69,15 @@ This script is applicable to:
 * The following Diagram illustrates the Host Network architecture for Scalable Non-Converged design:
 ![Scalable Non-Converged](scalable-non-converged.png)
 
-* Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
-
 ### Task 06 - Update Network Adapter Advanced Properties
 * Run [Set-DellNetAdapterAdvancedProperty](Set-DellNetAdapterAdvancedProperty.ps1) script
 * Script should be executed per Host
 * Script will configure based on Network Adapter Type (QLogic will use iWARP, Mellanox will use ROCEv2)
-* Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
 ### Task 07 - Enable RDMA on Storage Adapters
 * Run [Enable-DellNetAdapterRdma](Enable-DellNetAdapterRdma.ps1) script
 * Script should be executed per Host
 * Only Storage Adapters will be RDMA enabled
-* Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
 
 ### Task 08 - Configure DCB and QoS on each of the Hosts - for RDMA ROCEv2 only
 * Run [Set-DellNetQos](Set-DellNetQos.ps1) script
@@ -101,13 +91,11 @@ This script is applicable to:
 | 5             | Disabled         | 2           | Cluster Network          |
 
 * Manually disable DCB on the management adapters using the command Disable-NetAdapterQos <nicName>.
-* Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
   
 ### Task 09 - Enable Jumbo Frame
 * Run [Set-JumboFrame](Set-JumboFrame.ps1) script
 * Script should be executed per Host
 * Only Storage Adapters will be set with Jumbo Frame
-* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 10 - Validate RDMA
 * Run the [Test RDMA Script](Test-Rdma.ps1) with the following examples:
@@ -118,7 +106,6 @@ C:\Script\Test-Rdma.ps1 -ifIndex 17 -IsRoCE $true -RemoteIpAddress 192.168.101.1
 ```
 The result will look like the following:
 ![Test-RDMA-Result](Test-RDMA-Result.png)
-* Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
 
 ### Task 11 - Setup Proxy on Cluster Nodes to connect to internet (optional depending on your environment)
    * Review the firewall and proxy requirement here: [Azure Stack HCI Firewall Requirements](https://docs.microsoft.com/en-us/azure-stack/hci/concepts/firewall-requirements) and configure your external firewall and proxy accordingly.
@@ -140,8 +127,6 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
    * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
    * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
-   * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
-   * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 02 - Installing Roles and Features
    * Deployment and configuration of an Azure Stack HCI operating system version 20H2 or 21H2 cluster requires enabling specific operating system roles and features. Enable the following roles and features:
@@ -158,8 +143,6 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script
    * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
    * Although hyper-v services usually already installed in factory, and no need to restart when install other services, but the script restart the node anyway.
-   * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
-   * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
    
 ### Task 03 - Deploying and Configuring Cluster
 Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
@@ -173,37 +156,41 @@ As a sanity check first, consider running the following commands to make sure th
 ```
 if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
 ![PrepForCluster](PrepForCluster.png)
- * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
  
 #### Task 03b - Prepare drives
 Before you enable Storage Spaces Direct, ensure your permanent drives are empty. 
  * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
  * Script should be executed via Remote PowerShell on WAC/Management hosts
- * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
  
 #### Task 03c - Test cluster configuration
 In this step, you'll ensure that the server nodes are configured correctly to create a cluster.
 * Run the [Dell-Test-Cluster](Dell-Test-Cluster.ps1) script to test the cluster readiness
-* Script should be executed via Remote PowerShell on one of the Cluster Node
+* Script should be executed via Local PowerShell on one of the Cluster Node
 * HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
 * Review the report before creating a cluster and remediate if there are issues.
-* Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
-* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 
 #### Task 03d - Create the Cluster
 You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
 * Run the [Dell-New-Cluster](Dell-New-Cluster.ps1) to create cluster with static IP address assigned to a cluster name (usually the same subnets as cluster node's management IP Address
-* Script should be executed via Remote PowerShell on one of the Cluster Node
+* Script should be executed via Local PowerShell on one of the Cluster Node
 * HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
 * Review the report before enabling Storage Spaces Direct.
-* Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
-* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
 * Validate the cluster by running the following command:
 ```powershell
 $ClusterName = "HCINPRDCLU001"
 Get-Cluster -Name $ClusterName | Get-ClusterResource
 ```
 ### Task 04 - Enabling Storage Spaces Direct
+* Run the [Dell-Enable-ClusterS2D](Dell-Enable-ClusterS2D.ps1) to create 
+* Script should be executed via Remote PowerShell on one of the Cluster Node
+  
 ### Task 05 - Optimization Tasks
 ### Task 06 - Configuring Cluster Witness
 ### Task 07 - Register the Cluster and onboarding Arc
+## References
+ * Reference: [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
+ * Reference: [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
+ * Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
+ * Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+ * Reference: [ HCI Operation Guide ](https://infohub.delltechnologies.com/t/hci-operations-guide-managing-and-monitoring-the-solution-infrastructure-life-cycle/)
+ * Reference: [How to Configure Guest RDMA on Windows Server 2019](https://www.dell.com/support/kbdoc/en-ie/000113009/how-to-configure-guest-rdma-on-windows-server-2019#:~:text=Test%20RDMA%20communication%20between%20the,DCB%20settings%20on%20the%20host.)
