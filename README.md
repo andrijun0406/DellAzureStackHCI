@@ -181,10 +181,15 @@ $ClusterName = "HCINPRDCLU001"
 Get-Cluster -Name $ClusterName | Get-ClusterResource
 ```
 ### Task 04 - Enabling Storage Spaces Direct
-* Run the [Dell-Enable-ClusterS2D](Dell-Enable-ClusterS2D.ps1) to create 
+* Run the [Dell-Enable-ClusterS2D](Dell-Enable-ClusterS2D.ps1) to create a storage pool, Cluster Performance History disk, and tiers
 * Script should be executed via Remote PowerShell on one of the Cluster Node
+* Script will verify the storage pool after it is created.
   
 ### Task 05 - Optimization Tasks
+#### Task 05a - Configuring the host management network as a lower-priority network for live migration
+#### Task 05b - Configuring Ethernet RNDIS to not participate in Cluster Communication
+#### Task 05c - Updating the Page File Setting
+#### Task 05d - Update the hardware timeout for the Spaces port
 ### Task 06 - Configuring Cluster Witness
 ### Task 07 - Register the Cluster and onboarding Arc
 ## References
