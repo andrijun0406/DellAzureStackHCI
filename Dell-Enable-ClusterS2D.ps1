@@ -6,3 +6,4 @@ Get-ClusterS2D
 Get-StoragePool
 Get-StoragePool | Get-Physical Disk
 Get-StorageTier
+Get-ClusterPerformanceHistory
