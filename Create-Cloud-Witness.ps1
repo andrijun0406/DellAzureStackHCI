@@ -1,3 +1,5 @@
+#customize the following variable to your environment
+
 $ResourceGroupName="AzSHCICloudWitness"
 $StorageAccountName="azshcicloudwitness$(Get-Random -Minimum 100000 -Maximum 999999)"
 
