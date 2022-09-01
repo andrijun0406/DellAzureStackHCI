@@ -220,8 +220,7 @@ Cluster witness configuration helps maintain a cluster or storage quorum when a 
    $subscriptionid = "1234"
    $resourcegroup = "my-RG"
    Register-AzStackHCI -SubscriptionId $subscriptionid -ResourceGroupName $resourcegroup 
-```   
-* The following script 
+```    
 ## References
  * [ Dell Switch ROCE configurations ](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
  * [ Host Network Configuration ](https://infohub.delltechnologies.com/t/reference-guide-network-integration-and-host-network-configuration-options-1/)
