@@ -192,7 +192,17 @@ In this step, you'll ensure that the server nodes are configured correctly to cr
 
 #### Task 03d - Create the Cluster
 You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
-
+* Run the [Dell-New-Cluster](Dell-New-Cluster.ps1) to create cluster with static IP address assigned to a cluster name (usually the same subnets as cluster node's management IP Address
+* Script should be executed via Remote PowerShell on one of the Cluster Node
+* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
+* Review the report before enabling Storage Spaces Direct.
+* Reference: [Microsoft Docs: Create Cluster using PowerShell](https://docs.microsoft.com/en-us/azure-stack/hci/deploy/create-cluster-powershell)
+* Reference: [ HCI Deployment Guide ](https://infohub.delltechnologies.com/t/hci-deployment-guide-microsoft-hci-solutions-from-dell-technologies-1/)
+* Validate the cluster by running the following command:
+```powershell
+$ClusterName = "HCINPRDCLU001"
+Get-Cluster -Name $ClusterName | Get-ClusterResource
+```
 ### Task 04 - Enabling Storage Spaces Direct
 ### Task 05 - Optimization Tasks
 ### Task 06 - Configuring Cluster Witness
