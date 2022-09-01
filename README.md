@@ -200,6 +200,10 @@ To help ensure that the active memory dump is captured if a fatal system error o
 * Run the [Update-Pagefile](Update-Pagefile.ps1) script from remote powershell to each of the cluster nodes
    
 #### Task 05d - Update the hardware timeout for the Spaces port
+* For performance optimization and reliability, update the hardware timeout configuration for the Spaces port. 
+* This [Update-HwTimeout](Update-HwTimeout.ps1) script updates the configuration in the Windows registry and induces a restart of the node at the end of the registry update. 
+* Perform this update on all Storage Spaces Direct nodes immediately after initial deployment. Update one node at a time and wait until each node rejoins the cluster.
+
 ### Task 06 - Configuring Cluster Witness
 ### Task 07 - Register the Cluster and onboarding Arc
 ## References
