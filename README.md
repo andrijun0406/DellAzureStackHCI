@@ -192,6 +192,9 @@ After you create the cluster, live migration is configured by default to use all
 * Run the [Set-Live-Migration](Set-Live-Migration.ps1) script from one of the cluster node
    
 #### Task 05b - Configuring Ethernet RNDIS to not participate in Cluster Communication
+USB NICs used for IDRAC to Host interface can not be disabled to ensure OMIWAC is working, instead we set the Cluster Network Role to None to not participate in Cluster Communication
+* Run the [Disable-Rndis](Disable-Rndis.ps1) script from Remote PowerShell
+
 #### Task 05c - Updating the Page File Setting
 #### Task 05d - Update the hardware timeout for the Spaces port
 ### Task 06 - Configuring Cluster Witness
