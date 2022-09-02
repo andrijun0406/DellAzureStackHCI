@@ -8,6 +8,9 @@
 * VMFleet test are run with the following schemes:
   * Healthy cluster running 64 VMs per node for total 256 VMs in a cluster of 4 x AX nodes
   * Healthy cluster running 32 VMs per node for total 128 VMs in a cluster of 4 x AX nodes
+  The following table presents the range of VMFleet and DISKSPD parameters used:
+  
+  
 
 ## Hardware Failure Test
 ### Testing Method - run VMFleet
