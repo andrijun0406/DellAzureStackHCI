@@ -10,8 +10,18 @@
   * Healthy cluster running 32 VMs per node for total 128 VMs in a cluster of 4 x AX nodes
   The following table presents the range of VMFleet and DISKSPD parameters used:
   
-  
-
+| VMFleet and DISKSPD parameters | Values                                  | 
+| ------------------------------ | --------------------------------------- | 
+| Number of VMs per Node         | 64                                      | 
+| vCPUs per VM                   | 2                                       | 
+| Memory per VM                  | 4 GB                                    | 
+| VHDX size per VM               | 40 GB                                   | 
+| VM Operating System            | Windows Server 2022                     | 
+| Data file used in DISKSPD      | 10 GB                                   |
+| CSV in-memory Read Cache       | 0                                       | 
+| Block Sizes                    | 4 - 512 KB                              | 
+| Thread counts                  | 1 - 2                                   |
+   
 ## Hardware Failure Test
 ### Testing Method - run VMFleet
 ### Scenario 01 - Shutdown one node in a four node cluster
