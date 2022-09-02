@@ -2,8 +2,8 @@
 
 ## Hardware Performance Test
 ### Testing Method - run VMFleet
-* VMFleet is a stress-test tool which are used alot by many Microsoft customers and partners to evaluate performance of their Azure Stack HCI clusters
-* VMFleet consists of a set of PowerShell scripts that deploy VMs to a Hyper-V cluster and executes Microsoft's **DISKSPD** within those VMs to generate I/O.
+* [VMFleet](https://github.com/microsoft/diskspd/tree/master/Frameworks/VMFleet) is a stress-test tool which are used alot by many Microsoft customers and partners to evaluate performance of their Azure Stack HCI clusters
+* VMFleet consists of a set of PowerShell scripts that deploy VMs to a Hyper-V cluster and executes Microsoft's [ **DISKSPD** ](https://docs.microsoft.com/en-us/azure-stack/hci/manage/diskspd-overview) within those VMs to generate I/O.
 * DISKSPD is very helpful for creating syntethic workloads to test an application's resource utilization before going into production.
 * VMFleet test are run with the following schemes:
   * Healthy cluster running 64 VMs per node for total 256 VMs in a cluster of 4 x AX nodes.
