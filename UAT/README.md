@@ -27,19 +27,26 @@
 | I/O patterns                   | Random, Sequential                      |
    
 
-## Hardware Failure Test
-### Testing Method - run few VMs and see it's behaviour
+## Hardware Failure Test (just to see the VMs behaviour)
+### Testing Method - run one VMs in each node and see it's behaviour
+
+| VMs                            | Hosted in                               |  Volume reside  |
+| ------------------------------ | --------------------------------------- | --------------- |
+| testvm01                       | hcinprdhst002                           |  Volume01       |
+| testvm02                       | hcinprdhst002                           |  Volume02       |
+| testvm03                       | hcinprdhst002                           |  Volume03       |
+| testvm04                       | hcinprdhst002                           |  Volume04       |
+
+
 ### Scenario 01 - Shutdown one node in a four node cluster
-* VMFleet with previous schemes are run with one node failed
 ### Scenario 02 - Shutdown two node in a four node cluster at once
-* VMFleet with previous schemes are run with one node failed
 ### Scenario 03 - Shutdown two node in a four node cluster with 1 hour interval from 1 node shutdown
 ### Scenario 04 - Shutdown one drive lost
 ### Scenario 05 - Shutdown two drives lost in different servers
 ### Scenario 06 - Shutdown three node in a four node cluster
 ### Scenario 07 - Shutdown three disk or more in three or more nodes at once
 
-## Hardware Failure Test with VMFleet
+## Hardware Failure Test with VMFleet (with performance information)
 ### Testing Method - run VMFleet
 ### Scenario 01 - Shutdown one node in a four node cluster
 * VMFleet with previous schemes are run with one node failed
