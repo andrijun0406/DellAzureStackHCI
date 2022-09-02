@@ -6,9 +6,10 @@
 * VMFleet consists of a set of PowerShell scripts that deploy VMs to a Hyper-V cluster and executes Microsoft's **DISKSPD** within those VMs to generate I/O.
 * DISKSPD is very helpful for creating syntethic workloads to test an application's resource utilization before going into production.
 * VMFleet test are run with the following schemes:
-  * Healthy cluster running 64 VMs per node for total 256 VMs in a cluster of 4 x AX nodes
-  * Healthy cluster running 32 VMs per node for total 128 VMs in a cluster of 4 x AX nodes
-  The following table presents the range of VMFleet and DISKSPD parameters used:
+  * Healthy cluster running 64 VMs per node for total 256 VMs in a cluster of 4 x AX nodes.
+  * Healthy cluster running 32 VMs per node for total 128 VMs in a cluster of 4 x AX nodes.
+
+* The following table presents the range of VMFleet and DISKSPD parameters used:
   
 | VMFleet and DISKSPD parameters | Values                                  | 
 | ------------------------------ | --------------------------------------- | 
@@ -21,6 +22,9 @@
 | CSV in-memory Read Cache       | 0                                       | 
 | Block Sizes                    | 4 - 512 KB                              | 
 | Thread counts                  | 1 - 2                                   |
+| Outstanding I/Os               | 2 - 32                                  |   
+| Write percentages              | 0 - 100                                 |
+| I/O patterns                   | Random, Sequential                      |
    
 ## Hardware Failure Test
 ### Testing Method - run VMFleet
