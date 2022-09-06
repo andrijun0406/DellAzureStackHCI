@@ -39,8 +39,11 @@
 
 
 ### Scenario 01 - Shutdown one node in a four node cluster
-
-Graceful
+* Steps:
+  * Ping the target VM from management hosts
+  * Go to iDRAC Web Console and do Graceful Shutdown
+  * 
+* Expected Result:
 
 
 ### Scenario 02 - Shutdown two node in a four node cluster at once
