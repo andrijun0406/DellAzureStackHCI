@@ -32,13 +32,17 @@
 
 | VMs                            | Hosted in                               |  Volume reside  |
 | ------------------------------ | --------------------------------------- | --------------- |
-| testvm01                       | hcinprdhst002                           |  Volume01       |
-| testvm02                       | hcinprdhst002                           |  Volume02       |
-| testvm03                       | hcinprdhst002                           |  Volume03       |
-| testvm04                       | hcinprdhst002                           |  Volume04       |
+| testvm01                       | hcinprdhst001                           |  Volume01       |
+| testvm02                       | hcinprdhst002                           |  Volume01       |
+| testvm03                       | hcinprdhst003                           |  Volume01       |
+| testvm04                       | hcinprdhst004                           |  Volume01       |
 
 
 ### Scenario 01 - Shutdown one node in a four node cluster
+
+Graceful
+
+
 ### Scenario 02 - Shutdown two node in a four node cluster at once
 ### Scenario 03 - Shutdown two node in a four node cluster with 1 hour interval from 1 node shutdown
 ### Scenario 04 - Shutdown one drive lost
