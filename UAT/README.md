@@ -40,12 +40,33 @@
 ### Scenario 01 - Shutdown one node in a four node cluster
 #### Steps:
   * Ping the target VM from management hosts (e.g. testvm01)
-  * Go to iDRAC Web Console and do Graceful Shutdown on the host where the target VM resides (e.g. hcinprdhst001)
-  * Observe the ping result and 
+  * Go to iDRAC Web Console and do Power Off System on the host where the target VM resides (e.g. hcinprdhst001)
+  * Observe the ping result from management hosts command line
+  * Observe target VM movement from Windows Admin Center
+  * Check uptime of the VM once it is restarted to other host
+  * Check Storage Repair Job
 #### Expected Result:
-  * Target VM can still be ping
+  * Target VM can still be ping'ed (several timeout is expected)
+  * Target VM will be restarted to another available hosts
+  * Cluster still online, Volume01 will be in repair state
+  * Once Volume01 is healthy, Power On again the shutdown'ed host
+  * Once the host is up and joined again in the cluster, live migrate back target VM to its previous host
 
-### Scenario 02 - Shutdown two node in a four node cluster at once
+### Scenario 02 - Shutdown two node at once in a four node cluster at once
+#### Steps:
+  * Ping the target VMs from management hosts (e.g. testvm01 and testvm02)
+  * Go to iDRAC Web Console and do Power Off Systems on the hosts where the target VMs reside at once (e.g. hcinprdhst001 and hcinprdhst001)
+  * Observe the ping result from management hosts command line
+  * Observe target VMs movement from Windows Admin Center
+  * Check uptime of the VMs once it is restarted to other remaining hosts
+  * Check Storage Repair Job
+#### Expected Result:
+  * Target VMs can still be ping'ed (several timeout is expected)
+  * Target VMs will be restarted to another available hosts
+  * Cluster still online, Volume01 will be in repair state
+  * Once Volume01 is healthy, Power On again the shutdown'ed hosts
+  * Once the two hosts are up and joined again in the cluster, live migrate back target VMs to its previous hosts
+  
 ### Scenario 03 - Shutdown two node in a four node cluster with 1 hour interval from 1 node shutdown
 ### Scenario 04 - Shutdown one drive lost
 ### Scenario 05 - Shutdown two drives lost in different servers
