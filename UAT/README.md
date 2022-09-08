@@ -28,23 +28,22 @@
    
 
 ## Hardware Failure Test (just to see the VMs behaviour)
-### Testing Method - run one VMs in each node and see it's behaviour
+### Testing Method - run one VMs in each node and see it's behaviour. Note that those VMs are using Management Network (the same network as Hosts, and WAC)
 
-| VMs                            | Hosted in                               |  Volume reside  |
-| ------------------------------ | --------------------------------------- | --------------- |
-| testvm01                       | hcinprdhst001                           |  Volume01       |
-| testvm02                       | hcinprdhst002                           |  Volume01       |
-| testvm03                       | hcinprdhst003                           |  Volume01       |
-| testvm04                       | hcinprdhst004                           |  Volume01       |
-
+| VMs                            | Hosted in               |  Volume reside  | Network    |
+| ------------------------------ | ------------------------| --------------- | ---------- | 
+| testvm01                       | hcinprdhst001           |  Volume01       | Management |
+| testvm02                       | hcinprdhst002           |  Volume01       | Management |
+| testvm03                       | hcinprdhst003           |  Volume01       | Management |
+| testvm04                       | hcinprdhst004           |  Volume01       | Management |
 
 ### Scenario 01 - Shutdown one node in a four node cluster
 * Steps:
-  * Ping the target VM from management hosts
-  * Go to iDRAC Web Console and do Graceful Shutdown
-  * 
+  * Ping the target VM from management hosts (e.g. testvm01)
+  * Go to iDRAC Web Console and do Graceful Shutdown on the host where the target VM resides (e.g. hcinprdhst001)
+  * Observe the ping result and 
 * Expected Result:
-
+  * Target VM can still be ping
 
 ### Scenario 02 - Shutdown two node in a four node cluster at once
 ### Scenario 03 - Shutdown two node in a four node cluster with 1 hour interval from 1 node shutdown
