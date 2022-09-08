@@ -1,7 +1,7 @@
 # Hardware User Acceptance Test (UAT) PowerShell Scripts Compilation
 
 ## System Under Test (SUT)
-* CLuster with 4 AX node with the following specs:
+* CLuster with 4 x Dell AX-750 node with the following specs:
 * CPU  : 2 x Intel Xeon Gold 5318Y (2.1Ghz 24C)
 * RAM  : 16 x 64GB (1,024 GB)
 * Disk : 10 x 3.84TB SSD vSAS MU 3 DWPD
