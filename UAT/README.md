@@ -34,7 +34,7 @@
 | I/O patterns                   | Random, Sequential                      |
    
 
-## Hardware Failure Test (just to see the VMs behaviour)
+## Hardware Failure Test (Understanding VMs availability behaviour)
 ### Testing Method - run one VMs in each node and see it's behaviour. Note that those VMs are using Management Network (the same network as Hosts, and WAC)
 
 | VMs                            | Hosted in               |  Volume reside  | Network    |
@@ -76,7 +76,7 @@
   
 ### Scenario 03 - Shutdown three node in a four node cluster
 
-## Hardware Failure Test with VMFleet (with performance information)
+## Hardware Failure Test with VMFleet (understanding impact to performance)
 ### Testing Method - run VMFleet
 ### Scenario 01 - Shutdown one node in a four node cluster
 * VMFleet with previous schemes are run with one node failed
