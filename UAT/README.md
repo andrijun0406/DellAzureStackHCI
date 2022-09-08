@@ -1,5 +1,12 @@
 # Hardware User Acceptance Test (UAT) PowerShell Scripts Compilation
 
+## System Under Test (SUT)
+* CLuster with 4 AX node with the following specs:
+* CPU  : 2 x Intel Xeon Gold 5318Y (2.1Ghz 24C)
+* RAM  : 16 x 64GB (1,024 GB)
+* Disk : 10 x 3.84TB SSD vSAS MU 3 DWPD
+* NIC  : 1 x OCP3 Broadcom Dual Port 10/25GbE, 2 x PCIe Mellanox ConnectX-5 Dual Port 10/25GbE 
+
 ## Hardware Performance Test
 ### Testing Method - run VMFleet
 * [VMFleet](https://github.com/microsoft/diskspd/tree/master/Frameworks/VMFleet) is a stress-test tool which are used alot by many Microsoft customers and partners to evaluate performance of their Azure Stack HCI clusters
