@@ -80,13 +80,18 @@
 ## Hardware Failure Test - Removing Disk
 ### Scenario 01 - Remove one disk in one of the cluster node
 #### Steps
-**Step 1** Run PowerShell to fill variables and make sure all management tools are installed
+**Step 1** -  Run PowerShell to fill variables and make sure all management tools are installed
 ```powershell
 # Check if proxy exists
 $ClusterName="AzSHCI-Cluster"
 $Nodes=(Get-ClusterNode -Cluster $ClusterName).Name
 Install-WindowsFeature -Name RSAT-Clustering,RSAT-Clustering-PowerShell
 ```
+**Step 2** Remove the Disk physically. Use Blink Feature in OpenManage to identify which disk to be removed.
+**Step 3** Explore Cluster Nodes status.
+```powershell
+Get-ClusterNode -Cluster $ClusterName
+ ```
 #### Expected Results
 #### Result Capture
 
