@@ -118,7 +118,7 @@ Get-StorageSubSystem -CimSession $ClusterName -FriendlyName "Clustered Windows S
    **Step 7** Explore Fault Domains
 
 ```powershell
-Get-StorageSubSystem -CimSession $ClusterName -FriendlyName "Clustered Windows Storage on $ClusterName" | Get-StorageJob -CimSession $ClusterName
+Get-StorageFaultDomain -CimSession $ClusterName
  ```
  
 #### Expected Results
