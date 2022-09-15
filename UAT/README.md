@@ -80,6 +80,9 @@
 ## Hardware Failure Test - Removing Disk
 ### Scenario 01 - Remove one disk in one of the cluster node
 #### Steps
+**Step 1 ** Run PowerShell to fill variables and make sure all management tools are installed
+
+
 #### Expected Results
 #### Result Capture
 
