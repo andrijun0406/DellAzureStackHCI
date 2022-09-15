@@ -96,6 +96,13 @@ Get-ClusterNode -Cluster $ClusterName
  
 **Step 4** Explore Virtual Disk status
 
+Note: If everything is OK, all Virtual disks HealthStatus will report as Healthy and OperationalStatus as OK
+Note: In this case, cluster node is suspended. The Virtual Disk HealthStatus reports Warning and OperationalStatus reports Degraded.
+```powershell
+Get-VirtualDisk -CimSession $ClusterName
+ 
+ ```
+ 
 #### Expected Results
 #### Result Capture
 
