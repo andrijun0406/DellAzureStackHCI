@@ -76,6 +76,23 @@
   
 ### Scenario 03 - Shutdown three node in a four node cluster
 
+
+## Hardware Failure Test - Removing Disk
+### Scenario 01 - Remove one disk in one of the cluster node
+#### Steps
+#### Expected Results
+#### Result Capture
+
+### Scenario 02 - Remove two disk in two different cluster node
+#### Steps
+#### Expected Results
+#### Result Capture
+
+### Scenario 03 - Remove three disk in two different cluster node
+#### Steps
+#### Expected Results
+#### Result Capture
+
 ## Hardware Failure Test with VMFleet (understanding impact to performance)
 ### Testing Method - run VMFleet
 ### Scenario 01 - Shutdown one node in a four node cluster
