@@ -121,6 +121,12 @@ Get-StorageSubSystem -CimSession $ClusterName -FriendlyName "Clustered Windows S
 Get-StorageFaultDomain -CimSession $ClusterName
  ```
  
+   **Step 8** Explore Storage Maintenance mode
+
+```powershell
+Get-StorageFaultDomain -CimSession $ClusterName | Where-Object OperationalStatus -eq "In Maintenance Mode"
+ ```
+ 
 #### Expected Results
 #### Result Capture
 
