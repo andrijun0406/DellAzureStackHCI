@@ -87,7 +87,8 @@ $ClusterName="AzSHCI-Cluster"
 $Nodes=(Get-ClusterNode -Cluster $ClusterName).Name
 Install-WindowsFeature -Name RSAT-Clustering,RSAT-Clustering-PowerShell
 ```
-**Step 2** Remove the Disk physically. Use Blink Feature in OpenManage to identify which disk to be removed.
+**Step 2** Remove the Disk physically. Use Blink Feature in OpenManage to identify which disk to be removed
+
 **Step 3** Explore Cluster Nodes status.
 ```powershell
 Get-ClusterNode -Cluster $ClusterName
