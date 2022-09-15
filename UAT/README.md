@@ -93,6 +93,9 @@ Install-WindowsFeature -Name RSAT-Clustering,RSAT-Clustering-PowerShell
 ```powershell
 Get-ClusterNode -Cluster $ClusterName
  ```
+ 
+**Step 4** Explore Virtual Disk status
+
 #### Expected Results
 #### Result Capture
 
