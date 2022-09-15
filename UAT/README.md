@@ -100,7 +100,25 @@ Note: If everything is OK, all Virtual disks HealthStatus will report as Healthy
 Note: In this case, cluster node is suspended. The Virtual Disk HealthStatus reports Warning and OperationalStatus reports Degraded.
 ```powershell
 Get-VirtualDisk -CimSession $ClusterName
+ ```
  
+ **Step 5** Explore Storage Subsystem Status
+
+Note: Subsystem will be likely unheathy if running in VMs. You can explore more with Get-HealthFault -CimSession $ClusterName
+```powershell
+Get-StorageSubSystem -CimSession $ClusterName -FriendlyName "Clustered Windows Storage on $ClusterName"
+ ```
+ 
+  **Step 6** Explore Repair Jobs
+
+```powershell
+Get-StorageSubSystem -CimSession $ClusterName -FriendlyName "Clustered Windows Storage on $ClusterName" | Get-StorageJob -CimSession $ClusterName
+ ```
+ 
+   **Step 7** Explore Fault Domains
+
+```powershell
+Get-StorageSubSystem -CimSession $ClusterName -FriendlyName "Clustered Windows Storage on $ClusterName" | Get-StorageJob -CimSession $ClusterName
  ```
  
 #### Expected Results
