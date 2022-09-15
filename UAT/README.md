@@ -81,8 +81,12 @@
 ### Scenario 01 - Remove one disk in one of the cluster node
 #### Steps
 **Step 1 ** Run PowerShell to fill variables and make sure all management tools are installed
-
-
+```powershell
+# Check if proxy exists
+$ClusterName="AzSHCI-Cluster"
+$Nodes=(Get-ClusterNode -Cluster $ClusterName).Name
+Install-WindowsFeature -Name RSAT-Clustering,RSAT-Clustering-PowerShell
+```
 #### Expected Results
 #### Result Capture
 
