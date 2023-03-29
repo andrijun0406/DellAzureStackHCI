@@ -11,10 +11,11 @@ This script is applicable to:
 
 ## Deployment Prerequisite
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the [ deployment worksheet ](Deployment-Prerequisite-29032023.xlsx)
-2. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
-3. Best practice is to create a new OU and setup rights to create new objects inside the OU.
-3. DNS are in-place and FQDN are resolved for related IP address configured
-4. Download [ISO image](AX-Deployment-Script.iso) which consists all the scripts provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
+2. All Network switches are configured according deployment worksheet above, please check on how to configure the switch [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
+3. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
+4. Best practice is to create a new OU and setup rights to create new objects inside the OU.
+5. DNS are in-place and FQDN are resolved for related IP address configured
+6. Download [ISO image](AX-Deployment-Script.iso) which consists all the scripts provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
 
 ## PreDeployment Configuration
 
