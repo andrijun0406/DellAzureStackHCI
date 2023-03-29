@@ -10,7 +10,7 @@ This script is applicable to:
     * Multiple physical NIC is ordered but not used for cluster (for other application purposes like backup)
 
 ## Deployment Prerequisite
-1. AX nodes and TOR switches are racked and stacked and powered-on according to the deployment worksheet
+1. AX nodes and TOR switches are racked and stacked and powered-on according to the [deployment worksheet](Dell Azure Stack HCI Deployment Prerequisite 29Mar 2023)
 2. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
 3. Best practice is to create a new OU and setup rights to create new objects inside the OU.
 3. DNS are in-place and FQDN are resolved for related IP address configured
