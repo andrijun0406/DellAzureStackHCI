@@ -5,7 +5,7 @@ This repository will provide powershell script compilation for Deployment, UAT a
 
 ## [Deployment](Deployment)
 Deployment powershell compilation
-## [UAT](UAT)
+## [UAT](UAT) -- under construction
 User Acceptance Test for Hardware performance and failure scenario
-## [Operation](Operation)
+## [Operation](Operation) -- under construction
 Day 2 operation such as upgrade/updates, creating volume, VM, etc.
