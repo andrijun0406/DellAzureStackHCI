@@ -29,7 +29,25 @@ This script is applicable to:
 5. Enter the static IPv4 address details.
 6. Click **Back**, and then click **Finish**.
 
-### Task 02 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
+### Task 01 - Setting Password
+### Task 02 - Change Keyboard Settings
+
+Set-WinUserLanguageList en-US
+Set-WinSystemLocale -systemlocale en-US
+
+
+### Task 02 - Upgrade using SConfig
+
+1. On the sconfig menu, select option 6 and update all quality updates.
+2. Once all quality updates are completed, go to Feature Updates on the sconfig menu and perform an OS upgrade from
+21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
+have to run this multiple times to get to the latest cumulative update.
+3. Use Windows Admin Center to update each node to the latest hardware support matrix. See Dell Integrated System for
+Microsoft Azure Stack HCI: End-to-End Deployment - Cluster Creation Using Windows Admin Center.
+4. When the operating system on all nodes is updated to the latest CU of 22H2, you may go to creating the cluster using
+PowerShell or Windows Admin Center.
+
+### Task 03 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
 * Most of the time the pre-installed OS and firmware/bios/driver has been installed with up to date release, but to make sure please check again here before we connect to uplink network.
 * Run the [Get-DellComputerInfo](Get-DellComputerInfo.ps1) script to check installed OS and it's version.
 * The result of the script will look like this:
