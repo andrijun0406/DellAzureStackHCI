@@ -36,5 +36,5 @@ Enter-PSSession -ComputerName $server1 -Credential $user
 #Enter-PSSession -ComputerName $server4 -Credential $user
 
 #Run the following command after successfully enter a remote powershell session
-#Add-Computer -DomainName "contoso.com" -Credential "Contoso\ADAdmin" -Restart -Force
-#Add-LocalGroupMember -Group "Administrators" -Member "king@contoso.local"
+Add-Computer -DomainName "contoso.com" -Credential "Contoso\ADAdmin" -OUPath "<DN>" -Restart -Force
+Add-LocalGroupMember -Group "Administrators" -Member "king@contoso.local"
