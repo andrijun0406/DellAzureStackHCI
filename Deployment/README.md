@@ -30,6 +30,9 @@ This script is applicable to:
 6. Click **Back**, and then click **Finish**.
 
 ### Task 01 - Setting Password
+
+the OOBE (out-of-the-box experience) set local admin password (with simple one first)
+
 ### Task 02 - Change Keyboard Settings
 
 Set-WinUserLanguageList en-US
