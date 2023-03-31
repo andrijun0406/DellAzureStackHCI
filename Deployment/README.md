@@ -31,9 +31,11 @@ This script is applicable to:
 
 ### Task 01 - Setting Password
 
+The AX nodes comes with pre-installed 22H2 OS, but sometimes it ships with the old 21H2 OS. Also we have noticed that the OS was pre-installed 
 the OOBE (out-of-the-box experience) set local admin password (with simple one first)
 
 ### Task 02 - Change Keyboard Settings
+by default it is preinstalled using german (de-CH)
 
 Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
