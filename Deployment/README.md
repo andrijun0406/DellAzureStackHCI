@@ -11,7 +11,7 @@ This script is applicable to:
 5. The Script code is evaluated, fixed, adjusted and available for deployment in production. We also provide the script collections in ISO files for running the script from iDRAC consoles easily.
 
 ## Deployment Prerequisite
-1. AX nodes and TOR switches are racked and stacked and powered-on according to the [ deployment worksheet ](Deployment-Prerequisite-29032023.xlsx)
+1. AX nodes and TOR switches are racked and stacked and powered-on according to the [ deployment worksheet ](Deployment-Prerequisite-01082023.xlsx)
 2. All Network switches are configured according deployment worksheet above, please check on how to configure the switch [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
 3. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
 4. Best practice is to create a new OU and setup rights to create new objects inside the OU.
