@@ -4,7 +4,7 @@ This script is applicable to:
 1. Azure Stack HCI Operating System, version 22H2
 2. Dell Integrated System for Azure Stack HCI Hardware delivered from Dell (a.k.a AX nodes)
 3. **Scalable** network options with RDMA capable TOR switches using Dell Switches and Non-Converged Network (separate Storage traffic and VM/Management Traffic)
-   Note: we will release another guide for **Single Node**, **Dual-Node Switchles**s and **Stretched Cluster**
+   _Note: we will release another guide for_ **Single Node**, **Dual-Node Switchless** _and_ **Stretched Cluster**
 5. The sequence of the script and its content is following [ E2E Deployment and Operation Guide ](https://infohub.delltechnologies.com/t/e2e-deployment-and-operations-guide-with-scalable-networking-microsoft-hci-solutions-from-dell-technologies-1/) but adjusted to the following condition which may occur in customer environment:
     * Uplink to internet and management network are not up yet or will only be up after all the deployment prerequisite are done
     * Proxy and Firewall policy are in place in customer environment
