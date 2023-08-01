@@ -8,6 +8,7 @@ This script is applicable to:
     * Uplink to internet and management network are not up yet or will only be up after all the deployment prerequisite are done
     * Proxy and Firewall policy are in place in customer environment
     * Multiple physical NIC is ordered but not used for cluster (for other application purposes like backup)
+5. the Script code is evaluated, fixed, adjusted and available for deployment in production. We also provide the script collections in ISO files for running the script from iDRAC consoles easily.
 
 ## Deployment Prerequisite
 1. AX nodes and TOR switches are racked and stacked and powered-on according to the [ deployment worksheet ](Deployment-Prerequisite-29032023.xlsx)
