@@ -22,7 +22,11 @@ This script is applicable to:
 
 ## PreDeployment Configuration
 
-### Task 01 - Configuring iDRAC and BIOS
+### Task 01 - Configuring Network Switches
+* Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
+* Config should be imported per TOR switches (TOR switch A and B)
+  
+### Task 02 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
 * Perform the following steps to configure iDRAC IPv4 addresses in each hosts:
   
@@ -77,10 +81,6 @@ PowerShell or Windows Admin Center.
 ![Check Driver Result](Check-Driver.png)
 * Download firmware and BIOS from [Dell Support](https://www.dell.com/support/home/en-us) and update manually using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
 * Download the driver from [Dell Support](https://www.dell.com/support/home/en-us) and update them manually using DRM as mentioned in the reference [here](https://www.dell.com/support/kbdoc/en-us/000177083/support-for-dell-emc-repository-manager-drm).
-
-### Task 03 - Configuring Network Switches
-* Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
-* Config should be imported per TOR switches (TOR switch A and B)
 
 ### Task 04 - Changing Hostname
 * Change the hostname according to your organization's standard convention naming.
