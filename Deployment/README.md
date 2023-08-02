@@ -74,7 +74,7 @@ If your OS was pre-installed with keyboard settings other than English (en-US) f
 Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
 ```
-or you can use this script [Set-KeyboardSettings.ps1](Set-KeyboardSettings.ps1) found on ISO file.
+or you can use this script [Set-KeyboardSettings.ps1](Set-KeyboardSettings.ps1) found on ISO file (mapped to Drive D: using iDRAC virtual media)
 ```powershell
 D:\Set-KeyboardSettings.ps1
 ```
