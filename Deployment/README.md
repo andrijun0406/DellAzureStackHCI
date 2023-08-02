@@ -63,7 +63,16 @@ Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
 ```
 ##### Set up a password for Local Administrator Account
-  If your Pre-installed OS comes with German Keyboard settings (de-CH), set up with simple password first you can change the password later after changing the       keyboard and locale settings.
+
+If your Pre-installed OS comes with German Keyboard settings (de-CH), set up with a simple password first you can change the password later after changing the    keyboard and locale settings.
+
+* Password must not contain the user's account name or more than two consecutive characters from the user's full name.
+* Password must be six or more characters long.
+* Password must contain characters from three of the following four categories:
+   * Uppercase characters A-Z (Latin alphabet)
+   * Lowercase characters a-z (Latin alphabet)
+   * Digits 0-9
+   * Special characters (!, $, #, %, etc.)
 
 ### Task 02 - Upgrade using SConfig
 
