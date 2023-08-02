@@ -47,7 +47,7 @@ This script is applicable to:
 * Nothing needs to be done if you are using Mellanox/NVidia NICs.
 * Nothing needs to be done for NIC used other than storage (S2D) traffic.
 
-### Task 02 - Operating System Deployment
+### Task 03 - Operating System Deployment
 
 #### Manual Deployment
 
@@ -74,11 +74,11 @@ If your OS was pre-installed with keyboard settings other than English (en-US) f
 Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
 ```
-or you can use this script [Set-KeyboardSettings.ps1](Set-KeyboardSettings.ps1) found on ISO file (mapped to Drive D: using iDRAC virtual media)
+or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings.ps1) found on ISO file (mapped to Drive D: using iDRAC virtual media)
 ```powershell
-D:\Set-KeyboardSettings.ps1
+D:\01_Set-KeyboardSettings.ps1
 ```
-
+![01_Set-KeyboardSettings](01_Set-KeyboardSettings.png)
 ### Task 02 - Upgrade using SConfig
 
 1. On the sconfig menu, select option 6 and update all quality updates.
