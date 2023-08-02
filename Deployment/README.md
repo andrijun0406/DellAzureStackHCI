@@ -28,10 +28,12 @@ This script is applicable to:
 * Follow the configuration guide [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
 * Config should be imported per TOR switches (TOR switch A and B)
 * It is mandatory now to configure DCB (PFC/ETS) on the switches for Mellanox NIC and Intel E810. These are the only certified RDMA-capable NICs offered in AX nodes 15G. Intel E810 NIC can be deployed as iWARP RDMA or ROCEv2 RDMA, Mellanox NIC is only ROCEv2 RDMA. Both require DCB to be configured in TOR switches.
+* Create a port mapping for your switches depending on your Network Deployment Model: Fully-Converged or Non-Converged.
+* No need to configure LACP/Port-Channel for host-facing ports, LACP/Port-Channel may be required only on your uplink ports. Host and Management Traffic usually will be under one single virtual switch/SET (Switch Embedded Teaming) which has its own load balancing method (switch independent). While Storage traffic (SMB) will have its own SMB-Multichannel load balancing (no need to be under SET)
   
 ### Task 02 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
-* Perform the following steps to configure iDRAC IPv4 addresses in each hosts:
+* Perform the following steps to configure iDRAC IPv4 addresses in each host:
   
 1. During the system boot, press F12.
 2. At **System Setup Main Menu**, select **iDRAC Settings**.
