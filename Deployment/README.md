@@ -41,15 +41,17 @@ This script is applicable to:
 ### Task 02 - Operating System Deployment
 
 * Manual Deployment
+  The AX nodes come with pre-installed 22H2 OS, the only case where you will need Manual Deployment is to reimage the nodes for rebuilding the cluster. Download    the ISO, and install using iDRAC virtual media.
 * Factory-installed Deployment
-  
-The AX nodes comes with pre-installed 22H2 OS, but sometimes it ships with the old 21H2 OS. Also, we have noticed that the OS was pre-installed with keyboard settings to German (de-CH). Therefore, change the password with considerations that it was using German Keyboard or just setting the simple password (Note: need to check whether HCI OS support simple password for adminstrator)
-
-### Task 02 - Change Keyboard Settings
-by default it is preinstalled using german (de-CH)
-
-Set-WinUserLanguageList en-US
-Set-WinSystemLocale -systemlocale en-US
+  Complete Out-Of-Box experience (OOBE):
+  ** Select language and local settings:
+     We have noticed that the OS was pre-installed with keyboard settings to German (de-CH). if you want to change later you can use the following commands:
+     ```powershell
+     Set-WinUserLanguageList en-US
+      Set-WinSystemLocale -systemlocale en-US
+     ```
+   ** Set up a password for Local Administrator Account
+  If your Pre-installed OS comes with German Keyboard settings (de-CH), set up with simple password first you can change the password later after changing the       keyboard and locale settings.
 
 ### Task 02 - Upgrade using SConfig
 
