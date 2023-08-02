@@ -56,12 +56,6 @@ The AX nodes come with pre-installed 22H2 OS, the only case where you will need 
 #### Factory-installed Deployment
 Complete Out-Of-Box experience (OOBE):
 
-##### Select language and local settings:
-We have noticed that the OS was pre-installed with keyboard settings to German (de-CH). if you want to change later you can use the following commands:
-```powershell
-Set-WinUserLanguageList en-US
-Set-WinSystemLocale -systemlocale en-US
-```
 ##### Set up a password for Local Administrator Account
 
 If your Pre-installed OS comes with German Keyboard settings (de-CH), set up with a simple password first you can change the password later after changing the    keyboard and locale settings.
@@ -73,6 +67,14 @@ If your Pre-installed OS comes with German Keyboard settings (de-CH), set up wit
    * Lowercase characters a-z (Latin alphabet)
    * Digits 0-9
    * Special characters (!, $, #, %, etc.)
+     
+##### Select language and local settings:
+If your OS was pre-installed with keyboard settings other than English (en-US) for example German (de-CH) -- this is what we experienced in our Lab. You might want to change it with the following command:
+```powershell
+Set-WinUserLanguageList en-US
+Set-WinSystemLocale -systemlocale en-US
+```
+or you can use this script found on ISO file.
 
 ### Task 02 - Upgrade using SConfig
 
