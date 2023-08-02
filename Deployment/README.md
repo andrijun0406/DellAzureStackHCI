@@ -72,7 +72,13 @@ If your Pre-installed OS comes with German Keyboard settings (de-CH), set up wit
    * Special characters (!, $, #, %, etc.)
      
 ##### Select language and local settings:
-If your OS was pre-installed with keyboard settings other than English (en-US) for example German (de-CH) -- this is what we experienced in our Lab. 
+
+* If your OS was pre-installed with keyboard settings other than English (en-US) for example German (de-CH) -- this is what we experienced in our Lab.
+* Show current keyboard settings:
+```powershell
+Get-WinUserLanguageList
+Get-WinSystemLocale
+```
 ![Factory_KeyboardSettings](Factory_KeyboardSettings.png)
 
 You might want to change it with the following command:
