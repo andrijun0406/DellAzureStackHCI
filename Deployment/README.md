@@ -24,6 +24,7 @@ This script is applicable to:
 
 ### Task 01 - Configuring Network Switches
 * Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
+* Follow the configuration guide [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
 * Config should be imported per TOR switches (TOR switch A and B)
   
 ### Task 02 - Configuring iDRAC and BIOS
