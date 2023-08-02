@@ -40,6 +40,9 @@ This script is applicable to:
 
 ### Task 02 - Operating System Deployment
 
+* Manual Deployment
+* Factory-installed Deployment
+  
 The AX nodes comes with pre-installed 22H2 OS, but sometimes it ships with the old 21H2 OS. Also, we have noticed that the OS was pre-installed with keyboard settings to German (de-CH). Therefore, change the password with considerations that it was using German Keyboard or just setting the simple password (Note: need to check whether HCI OS support simple password for adminstrator)
 
 ### Task 02 - Change Keyboard Settings
