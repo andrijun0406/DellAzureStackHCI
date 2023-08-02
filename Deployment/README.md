@@ -91,15 +91,16 @@ or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings
 D:\01_Set-KeyboardSettings.ps1
 ```
 ![01_Set-KeyboardSettings](01_Set-KeyboardSettings.png)
-### Task 02 - Upgrade using SConfig
+### Task 02 - Upgrade using SConfig (Standalone)
 
-1. On the sconfig menu, select option 6 and update all quality updates.
-2. Once all quality updates are completed, go to Feature Updates on the sconfig menu and perform an OS upgrade from
+1. If you have configured a temporary Host Management IP Address to be able to connect to Internet, you can use **SConfig** to update OS before creating clusters
+2. On the sconfig menu, select option 6 and update all quality updates.
+3. Once all quality updates are completed, go to Feature Updates on the sconfig menu and perform an OS upgrade from
 21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
 have to run this multiple times to get to the latest cumulative update.
-3. Use Windows Admin Center to update each node to the latest hardware support matrix. See Dell Integrated System for
+4. Use Windows Admin Center to update each node to the latest hardware support matrix. See Dell Integrated System for
 Microsoft Azure Stack HCI: End-to-End Deployment - Cluster Creation Using Windows Admin Center.
-4. When the operating system on all nodes is updated to the latest CU of 22H2, you may go to creating the cluster using
+5. When the operating system on all nodes is updated to the latest CU of 22H2, you may go to creating the cluster using
 PowerShell or Windows Admin Center.
 
 ### Task 03 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
