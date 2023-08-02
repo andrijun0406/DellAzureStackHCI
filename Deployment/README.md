@@ -3,28 +3,29 @@
 This script is applicable to:
 1. Azure Stack HCI Operating System, version 22H2
 2. Dell Integrated System for Azure Stack HCI Hardware delivered from Dell (a.k.a AX nodes)
-3. **Scalable** network options with RDMA capable TOR switches using Dell Switches and Non-Converged Network (separate Storage traffic and VM/Management Traffic)
+3. **Scalable** network options with RDMA capable TOR switches using Dell Switches and Non-Converged Networks (separate Storage traffic and VM/Management Traffic)
    _Note: we will release another guide for_ **Single Node**, **Dual-Node Switchless** _and_ **Stretched Cluster**
 5. The sequence of the script and its content is following [ E2E Deployment and Operation Guide ](https://infohub.delltechnologies.com/t/e2e-deployment-and-operations-guide-with-scalable-networking-microsoft-hci-solutions-from-dell-technologies-1/) but adjusted to the following condition which may occur in customer environment:
-    * Uplink to internet and management network are not up yet or will only be up after all the deployment prerequisite are done
-    * Proxy and Firewall policy are in place in customer environment
-    * Multiple physical NIC is ordered but not used for cluster (for other application purposes like backup)
-6. The Script code is evaluated, fixed, adjusted and available for deployment in production. We also provide the script collections in ISO files for running the script from iDRAC consoles easily.
+    * Uplink to internet and management network are not up yet or will only be up after all the deployment prerequisites are done
+    * Proxy and Firewall policies are in place in the customer environment
+    * Multiple physical NICs are ordered but not used for the cluster (for other application purposes like a backup)
+6. The Script code is evaluated, fixed, adjusted, and available for deployment in production. We also provide the script collections in ISO files for running the script from iDRAC consoles easily.
 
 ## Deployment Prerequisite
-1. AX nodes and TOR switches are racked and stacked and powered-on according to the [ deployment worksheet ](Deployment-Prerequisite-01082023.xlsx)
-2. All Network switches are configured according deployment worksheet above, please check on how to configure the switch [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
-3. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
-4. Best practice is to create a new OU and setup rights to create new objects inside the OU.
+1. AX nodes and TOR switches are racked and stacked and powered on according to the [ deployment worksheet ](Deployment-Prerequisite-01082023.xlsx)
+2. All Network switches are configured according to the deployment worksheet above, please check on how to configure the switch [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
+3. Active Directory is in-place with users setup as Admin and **Local Administrator Group** in each of the cluster nodes
+4. Best practice is to create a new OU and set up rights to create new objects inside the OU.
 5. You can also use Prepare Active Directory Module script here [Prepare Active Directory for new Azure Stack HCI deployment](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-tool-active-directory)
 6. DNS are in-place and FQDN are resolved for related IP address configured
-7. Download [ISO image](AX-Deployment-Script.iso) which consists all the scripts provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
+7. Download [ISO image](AX-Deployment-Script.iso) which consists of all the scripts provided in this repo and mount it as virtual media, copy the script into C:\Script, and run all the scripts one by one following the task below.
 
 ## PreDeployment Configuration
 
 ### Task 01 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
 * Perform the following steps to configure iDRAC IPv4 addresses in each hosts:
+  
 1. During the system boot, press F12.
 2. At **System Setup Main Menu**, select **iDRAC Settings**.
 3. Under **iDRAC Settings**, select **Network**.
@@ -32,9 +33,14 @@ This script is applicable to:
 5. Enter the static IPv4 address details.
 6. Click **Back**, and then click **Finish**.
 
-### Task 01 - Setting Password
+* If you are using Qlogic NICs (only available for old 14G models: AX-640, AX-740XD) you need to enable iWARP and disable DCB settings.
+* If you are using Intel E810 NIC you need to enable RDMA manually from iDRAC.
+* Nothing needs to be done if you are using Mellanox/NVidia NICs.
+* Nothing needs to be done for NIC used other than storage (S2D) traffic.
 
-The AX nodes comes with pre-installed 22H2 OS, but sometimes it ships with the old 21H2 OS. Also we have noticed that the OS was pre-installed with keyboard settings to German (de-CH). Therefore, change the password with considerations that it was using German Keyboard or just setting the simple password (Note: need to check whether HCI OS support simple password for adminstrator)
+### Task 02 - Operating System Deployment
+
+The AX nodes comes with pre-installed 22H2 OS, but sometimes it ships with the old 21H2 OS. Also, we have noticed that the OS was pre-installed with keyboard settings to German (de-CH). Therefore, change the password with considerations that it was using German Keyboard or just setting the simple password (Note: need to check whether HCI OS support simple password for adminstrator)
 
 ### Task 02 - Change Keyboard Settings
 by default it is preinstalled using german (de-CH)
