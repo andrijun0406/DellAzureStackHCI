@@ -74,7 +74,7 @@ If your OS was pre-installed with keyboard settings other than English (en-US) f
 Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
 ```
-or you can use this script found on ISO file.
+or you can use this script [Set-KeyboardSettings](Set-KeyboardSettings.ps1)found on ISO file.
 
 ### Task 02 - Upgrade using SConfig
 
