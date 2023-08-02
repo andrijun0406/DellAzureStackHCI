@@ -23,9 +23,11 @@ This script is applicable to:
 ## PreDeployment Configuration
 
 ### Task 01 - Configuring Network Switches
+* The following guide is for Dell Switches, please check [here](https://aboutnetworks.net/rocev2-on-nexus9k/) for on how to configure RDMA on Cisco switches.
 * Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
-* Follow the configuration guide [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/)
+* Follow the configuration guide [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
 * Config should be imported per TOR switches (TOR switch A and B)
+* It is mandatory now to configure DCB (PFC/ETS) on the switches for Mellanox NIC and Intel E810. These are the only certified RDMA-capable NICs offered in AX nodes 15G. Intel E810 NIC can be deployed as iWARP RDMA or ROCEv2 RDMA, Mellanox NIC is only ROCEv2 RDMA. Both require DCB to be configured in TOR switches.
   
 ### Task 02 - Configuring iDRAC and BIOS
 * AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
