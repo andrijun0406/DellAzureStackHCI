@@ -16,8 +16,9 @@ This script is applicable to:
 2. All Network switches are configured according deployment worksheet above, please check on how to configure the switch [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
 3. Active Directory are in-place with users setup as Admin and **Local Administrator Group** in each of cluster nodes
 4. Best practice is to create a new OU and setup rights to create new objects inside the OU.
-5. DNS are in-place and FQDN are resolved for related IP address configured
-6. Download [ISO image](AX-Deployment-Script.iso) which consists all the scripts provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
+5. You can also use Prepare Active Directory Module script here [Prepare Active Directory for new Azure Stack HCI deployment](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-tool-active-directory)
+6. DNS are in-place and FQDN are resolved for related IP address configured
+7. Download [ISO image](AX-Deployment-Script.iso) which consists all the scripts provided in this repo and mount as virtual media, copy the script into C:\Script and run all the script one by one following the task below.
 
 ## PreDeployment Configuration
 
