@@ -40,9 +40,9 @@ This script is applicable to:
 
 ### Task 02 - Operating System Deployment
 
-#### **Manual Deployment**
+#### Manual Deployment
   The AX nodes come with pre-installed 22H2 OS, the only case where you will need Manual Deployment is to reimage the nodes for rebuilding the cluster. Download    the ISO, and install using iDRAC virtual media.
-#### **Factory-installed Deployment**
+#### Factory-installed Deployment
   Complete Out-Of-Box experience (OOBE):
   ** Select language and local settings:
      We have noticed that the OS was pre-installed with keyboard settings to German (de-CH). if you want to change later you can use the following commands:
