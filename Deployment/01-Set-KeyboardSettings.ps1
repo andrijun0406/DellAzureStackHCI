@@ -1,2 +1,4 @@
-Set-WinUserLanguageList en-US
-Set-WinSystemLocale -systemlocale en-US
+Set-WinUserLanguageList en-US -Force -Verbose
+Set-WinSystemLocale -systemlocale en-US -Verbose
+Get-WinUserLanguageList
+Get-WinSystemLocale
