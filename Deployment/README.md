@@ -91,24 +91,24 @@ or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings
 D:\01_Set-KeyboardSettings.ps1
 ```
 ![01_Set-KeyboardSettings](01_Set-KeyboardSettings.png)
-### Task 02 - Upgrade using SConfig (Standalone)
+### Task 04 - Upgrade using SConfig (Standalone)
 
 1. Sometimes you need to check if your Factory-installed OS is the latest, if not then you might need to update the OS before creating clusters
-2. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
-3. On the **SConfig** menu, select option 6 and update all quality updates.
-4. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
+   * Run the [Get-DellComputerInfo](Get-DellComputerInfo.ps1) script to check installed OS and it's version.
+   * The result of the script will look like this:
+![Check OS version](Check-OSversion.png)
+3. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
+4. On the **SConfig** menu, select option 6 and update all quality updates.
+5. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
 21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
 have to run this multiple times to get to the latest cumulative update.
-5. Use Windows Admin Center to update each node to the latest hardware support matrix. See Dell Integrated System for
+6. Use Windows Admin Center to update each node to the latest hardware support matrix. See Dell Integrated System for
 Microsoft Azure Stack HCI: End-to-End Deployment - Cluster Creation Using Windows Admin Center.
-6. When the operating system on all nodes is updated to the latest CU of 22H2, you may go to creating the cluster using
+7. When the operating system on all nodes is updated to the latest CU of 22H2, you may go to creating the cluster using
 PowerShell or Windows Admin Center.
 
-### Task 03 - Verifying Pre-installed OS and firmware/bios/driver compliance against Support Matrix
-* Most of the time the pre-installed OS and firmware/bios/driver has been installed with up to date release, but to make sure please check again here before we connect to uplink network.
-* Run the [Get-DellComputerInfo](Get-DellComputerInfo.ps1) script to check installed OS and it's version.
-* The result of the script will look like this:
-![Check OS version](Check-OSversion.png)
+### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
+
 * Run the [Get-DellDeviceDriver](Get-DellDeviceDriver.ps1) script to check installed drivers and firmware and check with latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
 * The result of the script will look like this:
 ![Check Driver Result](Check-Driver.png)
