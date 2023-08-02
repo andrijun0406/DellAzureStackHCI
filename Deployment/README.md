@@ -86,7 +86,7 @@ You might want to change it with the following command:
 Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
 ```
-or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings.ps1) found on ISO file (mapped to Drive D: using iDRAC virtual media)
+or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings.ps1) found on the ISO file (mapped to Drive D: using iDRAC virtual media)
 ```powershell
 D:\01_Set-KeyboardSettings.ps1
 ```
@@ -94,7 +94,11 @@ D:\01_Set-KeyboardSettings.ps1
 ### Task 04 - Upgrade using SConfig (Standalone)
 
 1. Sometimes you need to check if your Factory-installed OS is the latest, if not then you might need to update the OS before creating clusters
-   * Run the [Get-DellComputerInfo](Get-DellComputerInfo.ps1) script to check installed OS and it's version.
+   * Run the following command to check installed OS and it's version:
+     ```powershell
+     Get-ComputerInfo | Select-Object -Property OSName, OSDisplayVersion, OSVersion
+     ```
+   * Or Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
    * The result of the script will look like this:
 ![Check OS version](Check-OSversion.png)
 3. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
@@ -109,7 +113,7 @@ PowerShell or Windows Admin Center.
 
 ### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
 
-* Run the [Get-DellDeviceDriver](Get-DellDeviceDriver.ps1) script to check installed drivers and firmware and check with latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
+* Run the [Get-DellDeviceDriver](Get-DellDeviceDriver.ps1) script to check installed drivers and firmware and check with the latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
 * The result of the script will look like this:
 ![Check Driver Result](Check-Driver.png)
 * Download firmware and BIOS from [Dell Support](https://www.dell.com/support/home/en-us) and update manually using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
