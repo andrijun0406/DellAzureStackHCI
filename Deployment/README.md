@@ -11,7 +11,8 @@ This script is applicable to:
     * Multiple physical NICs are ordered but not used for the cluster (for other application purposes like a backup)
 6. The Script code is evaluated, fixed, adjusted, and available for deployment in production. We also provide the script collections in ISO files for running the script from iDRAC consoles easily.
 
-## Deployment Prerequisite
+## Deployment Prerequisites
+
 1. AX nodes and TOR switches are racked and stacked and powered on according to the [ deployment worksheet ](Deployment-Prerequisite-01082023.xlsx)
 2. All Network switches are configured according to the deployment worksheet above, please check on how to configure the switch [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
 3. Active Directory is in-place with users setup as Admin and **Local Administrator Group** in each of the cluster nodes
@@ -23,6 +24,7 @@ This script is applicable to:
 ## PreDeployment Configuration
 
 ### Task 01 - Configuring Network Switches
+
 * The following guide is for Dell Switches, please check [here](https://aboutnetworks.net/rocev2-on-nexus9k/) for on how to configure RDMA on Cisco switches.
 * Customize config here [TOR-Switch-A.conf](TOR-Switch-A.conf) and [TOR-Switch-B.conf](TOR-Switch-B.conf) based on deployment workbook.
 * Follow the configuration guide [here](https://infohub.delltechnologies.com/t/reference-guide-switch-configurations-roce-only-mellanox-cards/).
@@ -32,7 +34,8 @@ This script is applicable to:
 * No need to configure LACP/Port-Channel for host-facing ports, LACP/Port-Channel may be required only on your uplink ports. Host and Management Traffic usually will be under one single virtual switch/SET (Switch Embedded Teaming) which has its own load balancing method (switch independent). While Storage traffic (SMB) will have its own SMB-Multichannel load balancing (no need to be under SET)
   
 ### Task 02 - Configuring iDRAC and BIOS
-* AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked and connected to TOR switch and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
+
+* AX nodes are pre-installed with HCI OS and an optimized BIOS and iDRAC settings, however after racked and stacked, and connected to the TOR switches and OOB switch, if the OOB network in the environment does not provide DHCP IP addresses for iDRAC, you must manually set a static IPv4 address on each iDRAC network interface. You can access the physical server console to set the addresses by using KVM or other means.
 * Perform the following steps to configure iDRAC IPv4 addresses in each host:
   
 1. During the system boot, press F12.
@@ -71,6 +74,7 @@ If your Pre-installed OS comes with German Keyboard settings (de-CH), set up wit
 ##### Select language and local settings:
 If your OS was pre-installed with keyboard settings other than English (en-US) for example German (de-CH) -- this is what we experienced in our Lab. 
 ![Factory_KeyboardSettings](Factory_KeyboardSettings.png)
+
 You might want to change it with the following command:
 ```powershell
 Set-WinUserLanguageList en-US
