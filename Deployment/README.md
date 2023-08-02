@@ -101,15 +101,13 @@ D:\01_Set-KeyboardSettings.ps1
    * Or Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
    * The result of the script will look like this:
 ![Check OS version](Check-OSversion.png)
-3. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
-4. On the **SConfig** menu, select option 6 and update all quality updates.
-5. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
+2. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
+3. On the **SConfig** menu, select option 6 and update all quality updates.
+4. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
 21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
 have to run this multiple times to get to the latest cumulative update.
-6. Use Windows Admin Center to update each node to the latest hardware support matrix. See Dell Integrated System for
-Microsoft Azure Stack HCI: End-to-End Deployment - Cluster Creation Using Windows Admin Center.
-7. When the operating system on all nodes is updated to the latest CU of 22H2, you may go to creating the cluster using
-PowerShell or Windows Admin Center.
+5. When the operating system on all nodes is updated to the latest CU of 22H2, you may proceed to creating the cluster
+
 
 ### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
 
