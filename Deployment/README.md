@@ -41,15 +41,18 @@ This script is applicable to:
 ### Task 02 - Operating System Deployment
 
 #### Manual Deployment
-  The AX nodes come with pre-installed 22H2 OS, the only case where you will need Manual Deployment is to reimage the nodes for rebuilding the cluster. Download    the ISO, and install using iDRAC virtual media.
+
+The AX nodes come with pre-installed 22H2 OS, the only case where you will need Manual Deployment is to reimage the nodes for rebuilding the cluster. Download    the ISO, and install using iDRAC virtual media.
+
 #### Factory-installed Deployment
-  Complete Out-Of-Box experience (OOBE):
+Complete Out-Of-Box experience (OOBE):
+
 ##### Select language and local settings:
-     We have noticed that the OS was pre-installed with keyboard settings to German (de-CH). if you want to change later you can use the following commands:
-     ```powershell
-     Set-WinUserLanguageList en-US
-      Set-WinSystemLocale -systemlocale en-US
-     ```
+We have noticed that the OS was pre-installed with keyboard settings to German (de-CH). if you want to change later you can use the following commands:
+```powershell
+Set-WinUserLanguageList en-US
+Set-WinSystemLocale -systemlocale en-US
+```
 ##### Set up a password for Local Administrator Account
   If your Pre-installed OS comes with German Keyboard settings (de-CH), set up with simple password first you can change the password later after changing the       keyboard and locale settings.
 
