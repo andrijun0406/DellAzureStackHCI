@@ -121,9 +121,8 @@ have to run this multiple times to get to the latest cumulative update.
       * NetworkATC
       * NetworkHUD
       * FS-SMBBW
-   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script
-   * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
-   * Although hyper-v services usually already installed in factory, and no need to restart when install other services, but the script restart the node anyway.
+   * Run [04_Install-WindowsFeatures](04_Install-WindowsFeatures.ps1) script
+   * Script should be executed in all of the nodes
 
 ### Task 06 - Verifying firmware/bios/driver compliance against Support Matrix
 
