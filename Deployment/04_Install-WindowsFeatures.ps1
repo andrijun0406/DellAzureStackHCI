@@ -11,4 +11,4 @@
 #9 FS-SMBBW
 
 $features = "BitLocker","Data-Center-Bridging","Failover-Clustering","FS-FileServer","FS-Data-Deduplication","Hyper-V","NetworkATC","NetworkHUD","FS-SMBBW"
-Install-WindowsFeature -Name $features
+Install-WindowsFeature -Name $features -IncludeAllSubFeature -IncludeManagementTools 
