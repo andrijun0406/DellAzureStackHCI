@@ -91,6 +91,8 @@ or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings
 D:\01_Set-KeyboardSettings.ps1
 ```
 ![01_Set-KeyboardSettings](01_Set-KeyboardSettings.png)
+_Tips: You might want to use right-click mouse to copy the characters that you want like '-', or '\', or ':' and left-click it to paste to the command_
+
 ### Task 04 - Upgrade using SConfig (Standalone)
 
 1. Sometimes you need to check if your Factory-installed OS is the latest, if not then you might need to update the OS before creating clusters
