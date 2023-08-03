@@ -92,7 +92,7 @@ D:\01_Set-KeyboardSettings.ps1
 ```
 ![01_Set-KeyboardSettings](01_Set-KeyboardSettings.png)
 
-_Tips: You might want to use right-click mouse to copy the characters that you want like '-', or '\', or ':' and left-click it to paste to the command_
+_Tips: You might want to use right-click mouse to copy the characters that you want like '-', or ':' and left-click it to paste to the command_
 
 ### Task 04 - Upgrade using SConfig (Standalone)
 
