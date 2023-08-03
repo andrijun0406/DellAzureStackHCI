@@ -101,12 +101,15 @@ D:\01_Set-KeyboardSettings.ps1
    * Or Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
    * The result of the script will look like this:
 ![Check OS version](Check-OSversion.png)
-2. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
-3. On the **SConfig** menu, select option 6 and update all quality updates.
-4. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
+2. Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation). Locate the Host Management Port which is connected to the VLAN Host Management that you have configured in the TOR switches.
+3. On the **SConfig** menu, select option 8 and enter your IP address details.
+   
+5. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
+6. On the **SConfig** menu, select option 6 and update all quality updates.
+7. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
 21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
 have to run this multiple times to get to the latest cumulative update.
-5. When the operating system on all nodes is updated to the latest CU of 22H2, you may proceed to creating the cluster
+8. When the operating system on all nodes is updated to the latest CU of 22H2, you may proceed to create the cluster
 
 
 ### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
@@ -124,7 +127,7 @@ have to run this multiple times to get to the latest cumulative update.
 
 ### Task 05 - Non-Converged Host Network Configuration
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
-* This script also disabled Network Adapter which are not currenlty being used to prevent being added as Cluster Network (except for Ethernet RNDIS adapter which are used for iDRAC to OS redfish interface)
+* This script also disabled Network Adapters which are not currently being used to prevent being added as Cluster Networks (except for Ethernet RNDIS adapter       which is used for iDRAC to OS redfish interface)
 * Script should be executed per Host
 * Sample of Physical Network Adapter in AX-750 mapping (adjust per customer requirement):
 
