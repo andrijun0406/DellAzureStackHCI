@@ -135,7 +135,7 @@ have to run this multiple times to get to the latest cumulative update.
 
 ### Task 07 - Changing Hostname
 * Change the hostname according to your organization's standard convention naming.
-* Use **sconfig** to change hostname or use the following script [Change-Hostname](Change-Hostname.ps1)
+* Use **sconfig** to change hostname or use the following script [05_Change-Hostname](05_Change-Hostname.ps1)
 * Script should be executed per Host and require restart
 
 ### Task 05 - Non-Converged Host Network Configuration
