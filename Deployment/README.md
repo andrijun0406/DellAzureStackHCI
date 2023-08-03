@@ -110,8 +110,22 @@ D:\01_Set-KeyboardSettings.ps1
 have to run this multiple times to get to the latest cumulative update.
 7. When the operating system on all nodes is updated to the latest CU of 22H2 (Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script again), you may proceed to create the cluster
 
+### Task 05 - Installing Roles and Features
+   * Deployment and configuration of an Azure Stack HCI operating system version 22H2 cluster require enabling specific operating system roles and features.           Enable the following roles and features:
+      * BitLocker
+      * Data-Center-Bridging
+      * Failover-Clustering
+      * FS-FileServer
+      * FS-Data-Deduplication
+      * Hyper-V
+      * NetworkATC
+      * NetworkHUD
+      * FS-SMBBW
+   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script
+   * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
+   * Although hyper-v services usually already installed in factory, and no need to restart when install other services, but the script restart the node anyway.
 
-### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
+### Task 06 - Verifying firmware/bios/driver compliance against Support Matrix
 
 * Run the [03_Check-DeviceDrivers](03_Check-DeviceDrivers.ps1) script to check installed drivers and firmware and check with the latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
 * The result of the script will look like this:
@@ -203,22 +217,6 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
    * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
    * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
-   
-### Task 02 - Installing Roles and Features
-   * Deployment and configuration of an Azure Stack HCI operating system version 20H2 or 21H2 cluster requires enabling specific operating system roles and features. Enable the following roles and features:
-     * Hyper-V service (not required if the operating system is factory-installed)
-     * Failover clustering
-     * Data center bridging (DCB) (required only when implementing fully converged network topology with RoCE and when implementing DCB for the fully converged topology with iWARP)
-     * BitLocker (optional)
-     * File Server (optional)
-     * FS-Data-Deduplication module (optional)
-     * RSAT-AD-PowerShell module (optional)
-     * RSAT-AD-Clustering-PowerShell module
-     * NetworkATC (optional if you are using NetworkATC)
-     * Storage Replica (optional for stretched clusters)
-   * Run [Install-DellWindowsFeatures](Install-DellWindowsFeature.ps1) script
-   * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
-   * Although hyper-v services usually already installed in factory, and no need to restart when install other services, but the script restart the node anyway.
    
 ### Task 03 - Deploying and Configuring Cluster
 Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
