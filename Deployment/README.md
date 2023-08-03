@@ -103,7 +103,7 @@ D:\01_Set-KeyboardSettings.ps1
 ![Check OS version](Check-OSversion.png)
 2. Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation). Locate the Host Management Port which is connected to the VLAN Host Management that you have configured in the TOR switches.
 3. On the **SConfig** menu, select option 8 and enter your IP address details.
-   
+   ![SConfig_Host_IPAddress](SConfig_Host_IPAddress.png)
 5. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
 6. On the **SConfig** menu, select option 6 and update all quality updates.
 7. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
