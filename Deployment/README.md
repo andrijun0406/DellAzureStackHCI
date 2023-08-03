@@ -139,6 +139,12 @@ have to run this multiple times to get to the latest cumulative update.
 * Script may need to be modified to update your hostname according to your convention naming.
 * Script should be executed per Host and require a restart
 
+### Task 08 - Joining Cluster Nodes to an Active Directory Domain
+   * This step also requires that you have connectivity to the Active Directory (AD) server
+   * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to       a domain and use the domain account that is also a member of the local Administrators group on every node.
+   * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
+   * Script should be executed per Host and require a restart
+
 ### Task 05 - Non-Converged Host Network Configuration
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
 * This script also disabled Network Adapters which are not currently being used to prevent being added as Cluster Networks (except for Ethernet RNDIS adapter       which is used for iDRAC to OS redfish interface)
@@ -213,11 +219,6 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
    
 ## Deploy Azure Stack HCI Cluster with PowerShell
    At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to safely open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS and internet (Azure).
-   
-### Task 01 - Joining Cluster Nodes to an Active Directory Domain
-   * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to a domain and use the domain account that is in the local Administrators group on every server.
-   * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
-   * Script should be executed via Remote PowerShell on WAC/Management hosts (open multiple powershell windows)
    
 ### Task 03 - Deploying and Configuring Cluster
 Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
