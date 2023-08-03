@@ -136,7 +136,8 @@ have to run this multiple times to get to the latest cumulative update.
 ### Task 07 - Changing Hostname
 * Change the hostname according to your organization's standard convention naming.
 * Use **sconfig** to change hostname or use the following script [05_Change-Hostname](05_Change-Hostname.ps1)
-* Script should be executed per Host and require restart
+* Script may need to be modified to update your hostname according to your convention naming.
+* Script should be executed per Host and require a restart
 
 ### Task 05 - Non-Converged Host Network Configuration
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
