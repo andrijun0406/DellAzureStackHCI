@@ -113,7 +113,7 @@ have to run this multiple times to get to the latest cumulative update.
 
 ### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
 
-* Run the [Get-DellDeviceDriver](Get-DellDeviceDriver.ps1) script to check installed drivers and firmware and check with the latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
+* Run the [03_Check-DeviceDrivers](03_Check-DeviceDrivers.ps1) script to check installed drivers and firmware and check with the latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
 * The result of the script will look like this:
 ![Check Driver Result](Check-Driver.png)
 * Download firmware and BIOS from [Dell Support](https://www.dell.com/support/home/en-us) and update manually using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
