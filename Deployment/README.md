@@ -131,11 +131,12 @@ have to run this multiple times to get to the latest cumulative update.
 ![Check Driver Result](Check-Driver.png)
 * Download firmware and BIOS from [Dell Support](https://www.dell.com/support/home/en-us) and update manually using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
 * Download the driver from [Dell Support](https://www.dell.com/support/home/en-us) and update them manually using DRM as mentioned in the reference [here](https://www.dell.com/support/kbdoc/en-us/000177083/support-for-dell-emc-repository-manager-drm).
+* You can also skip this step and update firmware/bios/driver later in OpenManage Integration extension in Windows Admin Center
 
-### Task 04 - Changing Hostname
+### Task 07 - Changing Hostname
 * Change the hostname according to your organization's standard convention naming.
 * Use **sconfig** to change hostname or use the following script [Change-Hostname](Change-Hostname.ps1)
-* Script should be executed per Host
+* Script should be executed per Host and require restart
 
 ### Task 05 - Non-Converged Host Network Configuration
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
