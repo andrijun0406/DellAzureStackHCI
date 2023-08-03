@@ -101,15 +101,14 @@ D:\01_Set-KeyboardSettings.ps1
    * Or Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
    * The result of the script will look like this:
 ![Check OS version](Check-OSversion.png)
-2. Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation). Locate the Host Management Port which is connected to the VLAN Host Management that you have configured in the TOR switches.
+2. Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation). Locate the Host Management Port which is connected to the VLAN Host Management and routed to the internet.
 3. On the **SConfig** menu, select option 8 and enter your IP address details.
-   ![SConfig_Host_IPAddress](SConfig_Host_IPAddress.png)
-5. If you have configured a temporary Host Management IP Address to be able to connect to the Internet, you can use **SConfig** to update the OS
-6. On the **SConfig** menu, select option 6 and update all quality updates.
-7. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
+4. If you are able to connect to the Internet, then now you can use **SConfig** to update the OS
+5. On the **SConfig** menu, select option 6 and update all quality updates.
+6. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
 21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
 have to run this multiple times to get to the latest cumulative update.
-8. When the operating system on all nodes is updated to the latest CU of 22H2, you may proceed to create the cluster
+7. When the operating system on all nodes is updated to the latest CU of 22H2, you may proceed to create the cluster
 
 
 ### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
