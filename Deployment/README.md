@@ -108,7 +108,7 @@ D:\01_Set-KeyboardSettings.ps1
 6. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
 21H2 to 22H2. After completing the OS upgrade, perform step 1 to install all the quality updates for 21H2 and 22H2. You may
 have to run this multiple times to get to the latest cumulative update.
-7. When the operating system on all nodes is updated to the latest CU of 22H2, you may proceed to create the cluster
+7. When the operating system on all nodes is updated to the latest CU of 22H2 (Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script again), you may proceed to create the cluster
 
 
 ### Task 05 - Verifying firmware/bios/driver compliance against Support Matrix
