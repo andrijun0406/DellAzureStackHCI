@@ -1,40 +1,13 @@
-#at this stage, servers can not resolved to DNS yet so use IP address as Computer Name
-#also use local administrator to connect.
-#adjust the following parameter accordingly and run below command per remote powershell cli windows
-#if you running this from management or Windows Admin Centre (WAC) hosts then you need to setup WinRM TrustedHost manually first as the following
+# Run the following command from each of the nodes in PowerShell
 
-$server1 = "10.189.192.62"
-$server2 = "10.189.192.63"
-$server3 = "10.189.192.64"
-$server4 = "10.189.192.65"
+# Customize your variable here
+$credential = Get-Credential
+$domainname = "contoso.com"
+$oupath = "OU=AZHCI,DC=CONTOSO,DC=COM"
+$newname = "AxNode1"
+$domainadminuser1 = "john@contoso.com"
+$domainadminuser2 = "bob@contoso.com"
 
-Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value $server1 -Force
-Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value $server2 -Force
-Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value $server3 -Force
-Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value $server4 -Force
-
-#view TrustedHost List:
-Get-Item WSMAN:\Localhost\Client\TrustedHosts
-
-#after joined domain clear the list and use kerberos or Group Policy CredSSP
-#Clear-Item WSMAN:\Localhost\Client\TrustedHost
-
-# enter remote powershell command in each Powershell cli windows
-$user="$server1\Administrator"
-Enter-PSSession -ComputerName $server1 -Credential $user
-
-# enter remote powershell command in each Powershell cli windows
-#$user="$server2\Administrator"
-#Enter-PSSession -ComputerName $server2 -Credential $user
-
-# enter remote powershell command in each Powershell cli windows
-#$user="$server3\Administrator"
-#Enter-PSSession -ComputerName $server3 -Credential $user
-
-# enter remote powershell command in each Powershell cli windows
-#$user="$server4\Administrator"
-#Enter-PSSession -ComputerName $server4 -Credential $user
-
-#Run the following command after successfully enter a remote powershell session
-Add-Computer -DomainName "contoso.com" -Credential "Contoso\ADAdmin" -OUPath "<DN>" -Restart -Force
-Add-LocalGroupMember -Group "Administrators" -Member "king@contoso.local"
+Add-Computer -DomainName $domainname -OUPath $oupath -NewName $newname -Credential $credential -Restart
+Add-LocalGroupMember -Group "Administrators" -Member $domainadminuser1
+Add-LocalGroupMember -Group "Administrators" -Member $domainadminuser2
