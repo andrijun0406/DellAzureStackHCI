@@ -152,7 +152,7 @@ have to run this multiple times to get to the latest cumulative update.
 ### Task 09 - Verifying Data Center Firewall requirement with AzStackHCI environment checker
    * This step will check multiple test connectivity to Azure
    * Use the following Script [07_Check-Environment](07_Check-Environment.ps1), please update the hostnames variables first accodingly.
-   * Script should be executed in the management node
+   * Script should be run with PowerShell as admin in the management host.
    * Review the Test result and remediate any issues before proceeding.
    
 ### Task 10 - Non-Converged Host Network Configuration using Network ATC
