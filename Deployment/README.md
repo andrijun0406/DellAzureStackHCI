@@ -173,12 +173,12 @@ As a sanity check first, consider running the following commands to make sure th
 if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
 ![PrepForCluster](PrepForCluster.png)
  
-#### Task 03b - Prepare drives
+#### Task 10b - Prepare drives
 Before you enable Storage Spaces Direct, ensure your permanent drives are empty. 
  * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
  * Script should be executed via Remote PowerShell on WAC/Management hosts
  
-#### Task 03c - Test cluster configuration
+#### Task 10c - Test cluster configuration
 In this step, you'll ensure that the server nodes are configured correctly to create a cluster.
 * Run the [Dell-Test-Cluster](Dell-Test-Cluster.ps1) script to test the cluster readiness
 * Script should be executed via Local PowerShell on one of the Cluster Node
