@@ -106,6 +106,7 @@ _Tips: You might want to use right-click mouse to copy the characters that you w
    ```
 * Or Run the [02_Check-Internet](02_Check-Internet.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
 * The result of the script will look like this:
+
 ![Check Internet](Check_Internet.png)
 
 ### Task 05 - Upgrade using SConfig (Standalone)
