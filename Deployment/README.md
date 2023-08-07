@@ -91,7 +91,7 @@ or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings
 ```powershell
 D:\01_Set-KeyboardSettings.ps1
 ```
-![01_Set-KeyboardSettings](01_Set-KeyboardSettings.png)
+![Set-KeyboardSettings](Set-KeyboardSettings.png)
 
 _Tips: You might want to use right-click mouse to copy the characters that you want like '-', or ':' and left-click it to paste to the command_
 
@@ -115,7 +115,7 @@ _Tips: You might want to use right-click mouse to copy the characters that you w
      ```powershell
      Get-ComputerInfo | Select-Object -Property OSName, OSDisplayVersion, OSVersion
      ```
-   * Or Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
+   * Or Run the [03_Check-OSVersion](03_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
    * The result of the script will look like this:
 ![Check OS version](Check-OSversion.png)
 4. If you are able to connect to the Internet, then now you can use **SConfig** to update the OS
@@ -136,12 +136,12 @@ have to run this multiple times to get to the latest cumulative update.
       * NetworkATC
       * NetworkHUD
       * FS-SMBBW
-   * Run [03_Install-WindowsFeatures](03_Install-WindowsFeatures.ps1) script
+   * Run [04_Install-WindowsFeatures](04_Install-WindowsFeatures.ps1) script
    * Script should be executed in all of the nodes
 
 ### Task 06 - Verifying firmware/bios/driver compliance against Support Matrix
 
-* Run the [04_Check-DeviceDrivers](04_Check-DeviceDrivers.ps1) script to check installed drivers and firmware and check with the latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
+* Run the [05_Check-DeviceDrivers](05_Check-DeviceDrivers.ps1) script to check installed drivers and firmware and check with the latest [Support Matrix](https://dell.github.io/azurestack-docs/docs/hci/supportmatrix/)
 * The result of the script will look like this:
 ![Check Driver Result](Check-Driver.png)
 * Download firmware and BIOS from [Dell Support](https://www.dell.com/support/home/en-us) and update manually using iDRAC with the following guide: [ How to Update Firmware using iDRAC](https://www.dell.com/support/kbdoc/en-us/000134013/dell-poweredge-update-the-firmware-of-single-system-components-remotely-using-the-idrac#:~:text=Update%20Firmware%20Using%20iDRAC9&text=Go%20to%20Maintenance%20%3E%20System%20Update,Local%20as%20the%20Location%20Type.&text=Click%20Browse%2C%20select%20the%20firmware,component%2C%20and%20then%20click%20Upload.).
