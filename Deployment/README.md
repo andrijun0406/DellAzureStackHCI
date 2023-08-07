@@ -100,10 +100,13 @@ _Tips: You might want to use right-click mouse to copy the characters that you w
 * Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation).
 * Locate the Host Management Port which is connected to the VLAN Host Management and routed to the internet.
 * On the **SConfig** menu, select option 8 and enter your IP address details.
-* Verify that you can access internet from the nodes using command like the following:
+* Verify that you can access the internet from the nodes using commands like the following:
    ```powershell
      Test-NetConnection microsoft.com -InformationLevel "Detailed"
    ```
+* Or Run the [02_Check-Internet](02_Check-Internet.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
+* The result of the script will look like this:
+  ![Check Internet](Check-Internet.png)
 
 ### Task 05 - Upgrade using SConfig (Standalone)
 1. Sometimes you need to check if your Factory-installed OS is the latest, if not then you might need to update the OS before creating clusters
