@@ -148,8 +148,14 @@ have to run this multiple times to get to the latest cumulative update.
    * Use the following Script [06_Add-LocalAdmins](06_Add-LocalAdmins.ps1)
    * Script should be executed per Host and require a restart
    * At this stage you will be able to run PowerShell commands remotely and centrally from management hosts, no need to console each one of the nodes again.
+
+### Task 09 - Verifying Data Center Firewall requirement with AzStackHCI environment checker
+   * This step will check multiple test connectivity to Azure
+   * Use the following Script [07_Check-Environment](07_Check-Environment.ps1), please update the hostnames variables first accodingly.
+   * Script should be executed in the management node
+   * Review the Test result and remediate any issues before proceeding.
    
-### Task 09 - Non-Converged Host Network Configuration using Network ATC
+### Task 10 - Non-Converged Host Network Configuration using Network ATC
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
 * This script also disabled Network Adapters which are not currently being used to prevent being added as Cluster Networks (except for Ethernet RNDIS adapter       which is used for iDRAC to OS redfish interface)
 * Script should be executed per Host
