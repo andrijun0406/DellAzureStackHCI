@@ -177,7 +177,9 @@ Starting with 22H2, host network configuration will be done using Network ATC ri
 * To validate the cluster without errors, it might be a good idea to disable iDRAC adapters first as the validation report would complain as Cluster would not be able to communicate using this network (for obvious reasons)
 * Use the following Script [09_Test-Cluster](09_Test-Cluster.ps1), please update the hostnames variables first accodingly.
 * Script should be run with PowerShell as admin in the management host.
-* Review the report, and resolve all warnings and errors before creating a cluster.
+* Review the HTML Report which is generated in C:\Windows\Cluster\Reports, and resolve all warnings and errors before creating a cluster.
+
+### Task 11 - Test Cluster
 
 #### Task 10a - Prep for cluster setup
 As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
@@ -194,12 +196,6 @@ Before you enable Storage Spaces Direct, ensure your permanent drives are empty.
  * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
  * Script should be executed via Remote PowerShell on WAC/Management hosts
  
-#### Task 10c - Test cluster configuration
-In this step, you'll ensure that the server nodes are configured correctly to create a cluster.
-* Run the [Dell-Test-Cluster](Dell-Test-Cluster.ps1) script to test the cluster readiness
-* Script should be executed via Local PowerShell on one of the Cluster Node
-* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
-* Review the report before creating a cluster and remediate if there are issues.
 
 #### Task 03d - Create the Cluster
 You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
