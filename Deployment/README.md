@@ -145,7 +145,7 @@ have to run this multiple times to get to the latest cumulative update.
 
 ### Task 08 - Adding Domain Admins to Local Admins
    * This step will add Domain Admins which are assigned to manage the Azure Stack HCI infrastructure to each node's Local Administrator Group.
-   * Use the following command or use the following Script [06_Add-LocalAdmins](05_Add-LocalAdmins.ps1)
+   * Use the following command or use the following Script [06_Add-LocalAdmins](06_Add-LocalAdmins.ps1)
    * Script should be executed per Host and require a restart
    * At this stage you will be able to run PowerShell commands remotely and centrally from management hosts, no need to console each one of the nodes again.
    
