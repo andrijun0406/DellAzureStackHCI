@@ -52,14 +52,14 @@ This script is applicable to:
 
 ### Task 03 - Operating System Deployment
 
-#### Manual Deployment
+#### Task 03a - Manual Deployment
 
 The AX nodes come with pre-installed 22H2 OS, the only case where you will need Manual Deployment is to reimage the nodes for rebuilding the cluster. Download    the ISO, and install using iDRAC virtual media.
 
-#### Factory-installed Deployment
+#### Task 03b - Factory-installed Deployment
 Complete Out-Of-Box experience (OOBE):
 
-##### Set up a password for Local Administrator Account
+##### Step 1 - Set up a password for Local Administrator Account
 
 If your Pre-installed OS comes with German Keyboard settings (de-CH), set up with a simple password first you can change the password later after changing the    keyboard and locale settings.
 
@@ -71,7 +71,7 @@ If your Pre-installed OS comes with German Keyboard settings (de-CH), set up wit
    * Digits 0-9
    * Special characters (!, $, #, %, etc.)
      
-##### Select language and local settings:
+##### Step 2 - Select language and local settings:
 
 * If your OS was pre-installed with keyboard settings other than English (en-US) for example German (de-CH) -- this is what we experienced in our Lab.
 * Show current keyboard settings:
