@@ -149,7 +149,7 @@ have to run this multiple times to get to the latest cumulative update.
    * Script should be executed per Host and require a restart
    * At this stage you will be able to run PowerShell commands remotely and centrally from management hosts, no need to console each one of the nodes again.
    
-### Task 05 - Non-Converged Host Network Configuration
+### Task 09 - Non-Converged Host Network Configuration using Network ATC
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
 * This script also disabled Network Adapters which are not currently being used to prevent being added as Cluster Networks (except for Ethernet RNDIS adapter       which is used for iDRAC to OS redfish interface)
 * Script should be executed per Host
