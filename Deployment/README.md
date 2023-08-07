@@ -154,8 +154,15 @@ have to run this multiple times to get to the latest cumulative update.
    * Use the following Script [07_Check-Environment](07_Check-Environment.ps1), please update the hostnames variables first accodingly.
    * Script should be run with PowerShell as admin in the management host.
    * Review the Test result and remediate any issues before proceeding.
+
+## Deploy Azure Stack HCI Cluster with PowerShell
+
+Starting with 22H2, host network configuration will be done using Network ATC right after cluster creation. This is quite different than in previous version where host network configuration is done as a prerequisite before creating the cluster.
    
-### Task 10 - Non-Converged Host Network Configuration using Network ATC
+### Task 10 - Deploying and Configuring Cluster
+Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
+
+### Task 11 - Non-Converged Host Network Configuration using Network ATC
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
 * This script also disabled Network Adapters which are not currently being used to prevent being added as Cluster Networks (except for Ethernet RNDIS adapter       which is used for iDRAC to OS redfish interface)
 * Script should be executed per Host
@@ -227,11 +234,7 @@ netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
 ```
 * The 169.254. IP address wild card is used to bypass proxy for Ethernet RNDIS which used for iDRAC to OS redfish integration used in OpenManage Integration with Windows Admin Centre (OMIWAC).
    
-## Deploy Azure Stack HCI Cluster with PowerShell
-   At this stage your network is already configured and firmware/driver/BIOS already at the latest, you are ready now to safely open your uplink network and connect your cluster nodes to WAC hosts and AD/DNS and internet (Azure).
-   
-### Task 03 - Deploying and Configuring Cluster
-Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
+
 
 #### Task 03a - Prep for cluster setup
 As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
