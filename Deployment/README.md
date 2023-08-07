@@ -57,6 +57,7 @@ This script is applicable to:
 The AX nodes come with pre-installed 22H2 OS, the only case where you will need Manual Deployment is to reimage the nodes for rebuilding the cluster. Download    the ISO, and install using iDRAC virtual media.
 
 #### Task 03b - Factory-installed Deployment
+
 Complete Out-Of-Box experience (OOBE):
 
 ##### Step 1 - Set up a password for Local Administrator Account
@@ -94,8 +95,17 @@ D:\01_Set-KeyboardSettings.ps1
 
 _Tips: You might want to use right-click mouse to copy the characters that you want like '-', or ':' and left-click it to paste to the command_
 
-### Task 04 - Upgrade using SConfig (Standalone)
+### Task 04 - Assigned Host Management IP Address
 
+* Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation).
+* Locate the Host Management Port which is connected to the VLAN Host Management and routed to the internet.
+* On the **SConfig** menu, select option 8 and enter your IP address details.
+* Verify that you can access internet from the nodes using command like the following:
+   ```powershell
+     Test-NetConnection microsoft.com -InformationLevel "Detailed"
+   ```
+
+### Task 05 - Upgrade using SConfig (Standalone)
 1. Sometimes you need to check if your Factory-installed OS is the latest, if not then you might need to update the OS before creating clusters
    * Run the following command to check installed OS and it's version:
      ```powershell
@@ -104,8 +114,6 @@ _Tips: You might want to use right-click mouse to copy the characters that you w
    * Or Run the [02_Check-OSVersion](02_Check-OSVersion.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
    * The result of the script will look like this:
 ![Check OS version](Check-OSversion.png)
-2. Configure the IP address for the Host Management port (temporary until later you create a virtual switch in the cluster creation). Locate the Host Management Port which is connected to the VLAN Host Management and routed to the internet.
-3. On the **SConfig** menu, select option 8 and enter your IP address details.
 4. If you are able to connect to the Internet, then now you can use **SConfig** to update the OS
 5. On the **SConfig** menu, select option 6 and update all quality updates.
 6. Once all quality updates are completed, go to Feature Updates on the **SConfig** menu and perform an OS upgrade from
@@ -154,7 +162,6 @@ have to run this multiple times to get to the latest cumulative update.
    * Use the following Script [07_Check-Environment](07_Check-Environment.ps1), please update the hostnames variables first accodingly.
    * Script should be run with PowerShell as admin in the management host.
    * Review the Test result and remediate any issues before proceeding.
-
 
 ## Deploy Azure Stack HCI Cluster with PowerShell
 
