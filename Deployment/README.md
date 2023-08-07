@@ -106,7 +106,7 @@ _Tips: You might want to use right-click mouse to copy the characters that you w
    ```
 * Or Run the [02_Check-Internet](02_Check-Internet.ps1) script found on the ISO file (mapped to Drive D: using iDRAC virtual media)
 * The result of the script will look like this:
-  ![Check Internet](Check-Internet.png)
+  ![Check Internet](Check_Internet.png)
 
 ### Task 05 - Upgrade using SConfig (Standalone)
 1. Sometimes you need to check if your Factory-installed OS is the latest, if not then you might need to update the OS before creating clusters
