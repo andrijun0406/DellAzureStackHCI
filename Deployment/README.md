@@ -169,10 +169,13 @@ have to run this multiple times to get to the latest cumulative update.
 
 ## Deploy Azure Stack HCI Cluster with PowerShell
 
-Starting with 22H2, host network configuration will be done using Network ATC right after cluster creation. This is quite different than in previous version where host network configuration is done as a prerequisite before creating the cluster.
+Starting with 22H2, host network configuration will be done using Network ATC right after cluster creation. This is quite different than in previous version where host network configuration is done as a prerequisite before creating the cluster. Up to this stage, all the nodes have been prepared and joined the domain, host networking is already configured, and we are ready to create the cluster.
    
-### Task 10 - Deploying and Configuring Cluster
-Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
+### Task 10 - Test Cluster
+
+* The Test-Cluster cmdlet generates an HTML report of all performed validations and includes a summary of the validations. Review this report, and resolve all warnings and errors before creating a cluster.
+* To validate the cluster without errors, it might be a good idea to disable iDRAC adapters first as the validation report would complain as Cluster would not be able to communicate using this network (for obvious reasons)
+
 
 #### Task 10a - Prep for cluster setup
 As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
