@@ -1,15 +1,17 @@
 # Run the following command from each of the nodes in PowerShell
+function Join-Domain
+{
+    param (
+        [string]$title = 'Enter Domain Parameter here:'
+    )
+    Clear-Host
+    Write-Host "==================== $title ===================="
+    
+    $credential = Get-Credential
+    $domainname = Read-Host "Domain Name (FQDN, e.g. contoso.com)"
+    $oupath = Read-Host "OU Path (e.g. OU=AZHCI,DC=CONTOSO,DC=COM)" 
+    $newname = Read-Host "New Host Name (e.g. AxNode1)"
 
-# Customize your variable here
-$credential = Get-Credential
-$domainname = "contoso.com"
-$oupath = "OU=AZHCI,DC=CONTOSO,DC=COM"
-$newname = "AxNode1"
-
-Add-Computer -DomainName $domainname -OUPath $oupath -NewName $newname -Credential $credential -Restart -Force
-
-# add your admin user here:
-$domainadminuser1 = "john@contoso.com"
-$domainadminuser2 = "bob@contoso.com"
-Add-LocalGroupMember -Group "Administrators" -Member $domainadminuser1
-Add-LocalGroupMember -Group "Administrators" -Member $domainadminuser2
+    Add-Computer -DomainName $domainname -OUPath $oupath -NewName $newname -Credential $credential -Restart -Force
+}
+Join-Domain
