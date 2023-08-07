@@ -155,12 +155,54 @@ have to run this multiple times to get to the latest cumulative update.
    * Script should be run with PowerShell as admin in the management host.
    * Review the Test result and remediate any issues before proceeding.
 
+
 ## Deploy Azure Stack HCI Cluster with PowerShell
 
 Starting with 22H2, host network configuration will be done using Network ATC right after cluster creation. This is quite different than in previous version where host network configuration is done as a prerequisite before creating the cluster.
    
 ### Task 10 - Deploying and Configuring Cluster
 Up to this stage all the nodes has been prepared and joined domain, host networking already configured, we are ready to create cluster.
+
+#### Task 10a - Prep for cluster setup
+As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
+```powershell
+   Get-ClusterNode
+   Get-ClusterResource
+   Get-ClusterNetwork
+```
+if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
+![PrepForCluster](PrepForCluster.png)
+ 
+#### Task 03b - Prepare drives
+Before you enable Storage Spaces Direct, ensure your permanent drives are empty. 
+ * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
+ * Script should be executed via Remote PowerShell on WAC/Management hosts
+ 
+#### Task 03c - Test cluster configuration
+In this step, you'll ensure that the server nodes are configured correctly to create a cluster.
+* Run the [Dell-Test-Cluster](Dell-Test-Cluster.ps1) script to test the cluster readiness
+* Script should be executed via Local PowerShell on one of the Cluster Node
+* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
+* Review the report before creating a cluster and remediate if there are issues.
+
+#### Task 03d - Create the Cluster
+You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
+* Run the [Dell-New-Cluster](Dell-New-Cluster.ps1) to create cluster with static IP address assigned to a cluster name (usually the same subnets as cluster node's management IP Address
+* Script should be executed via Local PowerShell on one of the Cluster Node
+* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
+* Review the report before enabling Storage Spaces Direct.
+* Validate the cluster by running the following command:
+```powershell
+$ClusterName = "HCINPRDCLU001"
+Get-Cluster -Name $ClusterName | Get-ClusterResource
+```
+### Task 04 - Enabling Storage Spaces Direct
+* Run the [Dell-Enable-ClusterS2D](Dell-Enable-ClusterS2D.ps1) to create a storage pool, Cluster Performance History disk, and tiers
+* Script should be executed via Remote PowerShell on one of the Cluster Node
+* Script will verify the storage pool after it is created.
+
+
+
 
 ### Task 11 - Non-Converged Host Network Configuration using Network ATC
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
@@ -233,46 +275,6 @@ $bypass="<local>;*.contoso.com;10.189.192;169.254."
 netsh winhttp set proxy proxy-server=$proxy bypass-list=$bypass
 ```
 * The 169.254. IP address wild card is used to bypass proxy for Ethernet RNDIS which used for iDRAC to OS redfish integration used in OpenManage Integration with Windows Admin Centre (OMIWAC).
-   
-
-
-#### Task 03a - Prep for cluster setup
-As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
-```powershell
-   Get-ClusterNode
-   Get-ClusterResource
-   Get-ClusterNetwork
-```
-if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
-![PrepForCluster](PrepForCluster.png)
- 
-#### Task 03b - Prepare drives
-Before you enable Storage Spaces Direct, ensure your permanent drives are empty. 
- * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
- * Script should be executed via Remote PowerShell on WAC/Management hosts
- 
-#### Task 03c - Test cluster configuration
-In this step, you'll ensure that the server nodes are configured correctly to create a cluster.
-* Run the [Dell-Test-Cluster](Dell-Test-Cluster.ps1) script to test the cluster readiness
-* Script should be executed via Local PowerShell on one of the Cluster Node
-* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
-* Review the report before creating a cluster and remediate if there are issues.
-
-#### Task 03d - Create the Cluster
-You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
-* Run the [Dell-New-Cluster](Dell-New-Cluster.ps1) to create cluster with static IP address assigned to a cluster name (usually the same subnets as cluster node's management IP Address
-* Script should be executed via Local PowerShell on one of the Cluster Node
-* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
-* Review the report before enabling Storage Spaces Direct.
-* Validate the cluster by running the following command:
-```powershell
-$ClusterName = "HCINPRDCLU001"
-Get-Cluster -Name $ClusterName | Get-ClusterResource
-```
-### Task 04 - Enabling Storage Spaces Direct
-* Run the [Dell-Enable-ClusterS2D](Dell-Enable-ClusterS2D.ps1) to create a storage pool, Cluster Performance History disk, and tiers
-* Script should be executed via Remote PowerShell on one of the Cluster Node
-* Script will verify the storage pool after it is created.
   
 ### Task 05 - Optimization Tasks
    
