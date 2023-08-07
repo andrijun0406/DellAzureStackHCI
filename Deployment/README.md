@@ -87,7 +87,7 @@ You might want to change it with the following command:
 Set-WinUserLanguageList en-US
 Set-WinSystemLocale -systemlocale en-US
 ```
-or you can use this script [01_Set-KeyboardSettings.ps1](01_Set-KeyboardSettings.ps1) found on the ISO file (mapped to Drive D: using iDRAC virtual media)
+or you can use this script [01_Set-KeyboardSettings](01_Set-KeyboardSettings.ps1) found on the ISO file (mapped to Drive D: using iDRAC virtual media)
 ```powershell
 D:\01_Set-KeyboardSettings.ps1
 ```
@@ -151,19 +151,19 @@ have to run this multiple times to get to the latest cumulative update.
 ### Task 07 - Joining Cluster Nodes to an Active Directory Domain
    * This step also requires that you have connectivity to the Active Directory (AD) server
    * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to       a domain and use the domain account that is also a member of the local Administrators group on every node.
-   * Use the following script [05_Join-Domain](05_Join-Domain.ps1) to join domain
+   * Use the following script [06_Join-Domain](06_Join-Domain.ps1) to join domain
    * Please provide also a new hostname that aligns with your naming conventions when adding this node to the domain
    * Script should be executed per Host and require a restart
 
 ### Task 08 - Adding Domain Admins to Local Admins
    * This step will add Domain Admins which are assigned to manage the Azure Stack HCI infrastructure to each node's Local Administrator Group.
-   * Use the following Script [06_Add-LocalAdmins](06_Add-LocalAdmins.ps1)
+   * Use the following Script [07_Add-LocalAdmins](07_Add-LocalAdmins.ps1)
    * Script should be executed per Host and require a restart
    * At this stage you will be able to run PowerShell commands remotely and centrally from management hosts, no need to console each one of the nodes again.
 
 ### Task 09 - Verifying Data Center Firewall requirement with AzStackHCI environment checker
    * This step will check multiple test connectivity to Azure
-   * Use the following Script [07_Check-Environment](07_Check-Environment.ps1), please update the hostnames variables first accodingly.
+   * Use the following Script [08_Check-Environment](08_Check-Environment.ps1), please update the hostnames variables first accodingly.
    * Script should be run with PowerShell as admin in the management host.
    * Review the Test result and remediate any issues before proceeding.
 
