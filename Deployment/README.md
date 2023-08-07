@@ -136,16 +136,11 @@ have to run this multiple times to get to the latest cumulative update.
 * Download the driver from [Dell Support](https://www.dell.com/support/home/en-us) and update them manually using DRM as mentioned in the reference [here](https://www.dell.com/support/kbdoc/en-us/000177083/support-for-dell-emc-repository-manager-drm).
 * You can also skip this step and update firmware/bios/driver later in OpenManage Integration extension in Windows Admin Center
 
-### Task 07 - Changing Hostname
-* Change the hostname according to your organization's standard convention naming.
-* Use **sconfig** to change hostname or use the following script [05_Change-Hostname](05_Change-Hostname.ps1)
-* Script may need to be modified to update your hostname according to your convention naming.
-* Script should be executed per Host and require a restart
-
-### Task 08 - Joining Cluster Nodes to an Active Directory Domain
+### Task 07 - Joining Cluster Nodes to an Active Directory Domain
    * This step also requires that you have connectivity to the Active Directory (AD) server
    * So far you've connected to each server node with the local administrator account <ServerName>\Administrator. To proceed, you'll need to join the servers to       a domain and use the domain account that is also a member of the local Administrators group on every node.
    * Use **sconfig** to join domain or use the following script [Join-Domain](Join-Domain.ps1)
+   * Please provide also a new hostname that aligns with your naming conventions when adding this node to the domain
    * Script should be executed per Host and require a restart
 
 ### Task 05 - Non-Converged Host Network Configuration
