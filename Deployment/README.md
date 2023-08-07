@@ -173,9 +173,11 @@ Starting with 22H2, host network configuration will be done using Network ATC ri
    
 ### Task 10 - Test Cluster
 
-* The Test-Cluster cmdlet generates an HTML report of all performed validations and includes a summary of the validations. Review this report, and resolve all warnings and errors before creating a cluster.
+* The Test-Cluster cmdlet generates an HTML report of all performed validations and includes a summary of the validations.
 * To validate the cluster without errors, it might be a good idea to disable iDRAC adapters first as the validation report would complain as Cluster would not be able to communicate using this network (for obvious reasons)
-
+* Use the following Script [09_Test-Cluster](09_Test-Cluster.ps1), please update the hostnames variables first accodingly.
+* Script should be run with PowerShell as admin in the management host.
+* Review the report, and resolve all warnings and errors before creating a cluster.
 
 #### Task 10a - Prep for cluster setup
 As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
