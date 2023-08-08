@@ -187,40 +187,18 @@ Starting with 22H2, host network configuration will be done using Network ATC ri
    * Cluster IP Address (use static IP Address and the same subnet as Hosts Management network)
 * Script should be run with PowerShell as admin in the management host.
 
-#### Task 10a - Prep for cluster setup
-As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
-```powershell
-   Get-ClusterNode
-   Get-ClusterResource
-   Get-ClusterNetwork
-```
-if above command shows as the following, it means that no cluster is configured and no servers are belong to any cluster:
-![PrepForCluster](PrepForCluster.png)
+### Task 12 - Configure Host Networking with NetATC
+
  
 #### Task 10b - Prepare drives
 Before you enable Storage Spaces Direct, ensure your permanent drives are empty. 
  * Run the [Prepare-Drives](Prepare-Drives.ps1) script to remove any old partitions and other data.
  * Script should be executed via Remote PowerShell on WAC/Management hosts
  
-
-#### Task 03d - Create the Cluster
-You are now ready to create a cluster with the server nodes that you have validated in the preceding steps.
-* Run the [Dell-New-Cluster](Dell-New-Cluster.ps1) to create cluster with static IP address assigned to a cluster name (usually the same subnets as cluster node's management IP Address
-* Script should be executed via Local PowerShell on one of the Cluster Node
-* HTML Report are generated in C:\Windows\Cluster\Reports in one of the Cluster Node where the script is executed
-* Review the report before enabling Storage Spaces Direct.
-* Validate the cluster by running the following command:
-```powershell
-$ClusterName = "HCINPRDCLU001"
-Get-Cluster -Name $ClusterName | Get-ClusterResource
-```
 ### Task 04 - Enabling Storage Spaces Direct
 * Run the [Dell-Enable-ClusterS2D](Dell-Enable-ClusterS2D.ps1) to create a storage pool, Cluster Performance History disk, and tiers
 * Script should be executed via Remote PowerShell on one of the Cluster Node
 * Script will verify the storage pool after it is created.
-
-
-
 
 ### Task 11 - Non-Converged Host Network Configuration using Network ATC
 * This script [Set-DellHostNetwork](Set-DellHostNetwork.ps1) will set IP address, VlanId and Switch-Embedded-Teaming for VM, Management and Storage Traffic.
