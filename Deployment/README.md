@@ -179,7 +179,13 @@ Starting with 22H2, host network configuration will be done using Network ATC ri
 * Script should be run with PowerShell as admin in the management host.
 * Review the HTML Report which is generated in C:\Windows\Cluster\Reports, and resolve all warnings and errors before creating a cluster.
 
-### Task 11 - Test Cluster
+### Task 11 - Create the Cluster
+
+* Now, let's create the cluster using the following Script [10_Create-Cluster](10_Create-Cluster.ps1), please update the following variables accordingly:
+   * Hosts Name
+   * Cluster Name
+   * Cluster IP Address (use static IP Address and the same subnet as Hosts Management network)
+* Script should be run with PowerShell as admin in the management host.
 
 #### Task 10a - Prep for cluster setup
 As a sanity check first, consider running the following commands to make sure that your servers don't already belong to a cluster:
